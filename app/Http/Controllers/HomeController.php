@@ -12,4 +12,16 @@ class HomeController extends Controller
         $histoire = Histoire::find($id);
         return view('home.show', ['histoire' => $histoire]);
     }
+
+     public function index(){
+         $histoires = Histoire::all();
+          return view('welcome', ['histoires'=>$histoires]);
+     }
+     public function apropos() {
+          return view('home.apropos', ['titre'=>'A propos']);
+     }
+
+     public function contact() {
+          return view('home.contact', ['titre'=>'Contact']);
+     }
 }
