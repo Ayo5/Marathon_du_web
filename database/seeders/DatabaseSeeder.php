@@ -12,16 +12,23 @@ class DatabaseSeeder extends Seeder
     /**
      * Seed the application's database.sqlite.
      */
-    public function run(): void
-    {
-        $azerty =bcrypt('azerty');
+    public function run(): void {
+        //Faire le rand pour les images
+        $tab = array("Batman", "Femme", "Femme2", "Homme", "Homme2");
+
+        $azerty = bcrypt('azerty');
         $nb_users = 50;
-        for($i = 1; $i <= $nb_users; $i++)
+        for ($i = 1; $i <= $nb_users; $i++) {
+            // Choix aléatoire d'une image
+            $avatarChoisi = $tab[array_rand($tab)];
+
             DB::table('users')->insert([
-            'name' => "user$i",
-            'email' => "user$i@gmail.com",
-            'password' => $azerty,
-        ]);
+                'name' => "user$i",
+                'email' => "user$i@gmail.com",
+                'password' => $azerty,
+                'avatar_link' => $avatarChoisi,
+            ]);
+        }
 
         DB::table('genres')->insert([
             'label' => "SF"
