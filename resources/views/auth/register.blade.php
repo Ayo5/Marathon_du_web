@@ -24,6 +24,17 @@
             <div class="form-group">
                 <input type="password" name="password_confirmation" class="form-input" placeholder="Confirmez mot de passe">
             </div>
+            <!--Avatar_link-->
+            <p>
+                Pour l'avatar, choix entre:
+            </p>
+            <p class="paraRegister">
+                "Batman", "Homme",
+                "Femme", "Homme2" et "Femme2"
+            </p>
+            <div class="form-group">
+                <input type="text" name="avatar_link" class="form-input" placeholder="Nom de l'avatar">
+            </div>
             <!--Login Button-->
             <div class="form-group">
                 <button class="form-button" type="submit">Enregistrement</button>
