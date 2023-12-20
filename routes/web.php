@@ -1,6 +1,9 @@
 <?php
 
+use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\EquipeController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -13,9 +16,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-})->name("index");
+Route::get('/', [HomeController::class, 'index'])->name('index');;
 
 Route::get('/contact', function () {
     return view('contact');
@@ -25,3 +26,4 @@ Route::get('/test-vite', function () {
     return view('test-vite');
 })->name("test-vite");
 
+Route::get('/equipes', [EquipeController::class, 'index'])->name("equipes");
