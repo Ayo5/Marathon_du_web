@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\EquipeController;
 
@@ -27,3 +28,8 @@ Route::get('/test-vite', function () {
 })->name("test-vite");
 
 Route::get('/equipes', [EquipeController::class, 'index'])->name("equipes");
+
+Route::get('/home', function () {
+    return view('auth.dashboard');
+})->middleware(['auth'])->name('home');
+Route::get('/user', [UserController::class, 'index'])->name('user.index')->middleware(['auth']);
