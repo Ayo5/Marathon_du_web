@@ -39,3 +39,4 @@ Route::get('/home', function () {
 Route::get('/user', [UserController::class, 'index'])->name('user.index')->middleware(['auth']);
 
 Route::get('/histoire/{histoire}/chapitre/premier', [ChapitreController::class, 'premier'])->name('chapitre.premier');
+//Route::post('/histoire/{histoire}/chapitre/create', [ChapitreController::class, 'store'])->name('chapitre.store');

@@ -19,7 +19,11 @@
             </div>
             <div>
                 {{-- la photo de l'histoire --}}
-                <p><strong>Media : </strong><img src="{{ asset($chapitre->media) }}" alt="Media du Chapitre"></td></p>
+                <p><strong>Media : </strong><img src="{{ asset($chapitre->media) }}" alt="Media du Chapitre"></p>
+            </div>
+            <div>
+                {{-- bouton pour démarrer la lecture de l'histoire --}}
+                <a href="{{ route('chapitre.premier', ['histoire' => $histoire->id]) }}" class="btn btn-primary">Créer un chapitre</a>
             </div>
         </div>
     @endif

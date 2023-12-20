@@ -21,4 +21,15 @@ class ChapitreController extends Controller
     }
 
 
+    public function store(Request $request, $histoireId)
+    {
+        $chapitre = new Chapitre;
+        $chapitre->titre = $request->titre;
+        $chapitre->titrecourt = $request->titrecourt;
+        $chapitre->media = $request->media; // You might need to handle file upload here
+        $chapitre->histoire_id = $histoireId;
+        $chapitre->save();
+
+        return redirect()->route('chapitre.show', ['id' => $chapitre->id], ['histoire' => $histoireId]);
+    }
 }
