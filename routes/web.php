@@ -17,7 +17,7 @@ use App\Http\Controllers\EquipeController;
 */
 
 Route::get('/', [HomeController::class, 'index'])->name('index');;
-
+Route::get('/histoire/{id}', [HomeController::class, 'show'])->name('show');
 Route::get('/contact', function () {
     return view('contact');
 })->name("contact");
