@@ -24,7 +24,9 @@
             </div>
             <div>
                 {{-- l'avis de l'histoire' --}}
-                <p><strong>Avis :</strong>{{ $avis->contenu}}</p>
+                @foreach($avis as $avisDeHistoire)
+                <p><strong>Avis :</strong>{{ $avisDeHistoire->contenu}}</p>
+                @endforeach
             </div>
         </div>
     @endif
