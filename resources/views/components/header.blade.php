@@ -1,10 +1,11 @@
 <header class="main-header">
     <button><a href="{{route('index')}}">🏛 Accueil</a></button>
+    <button><a href="{{route('test-vite')}}">Test Vite</a></button>
     <button><a href="{{route('contact')}}">☎️ Contact</a></button>
-    @auth
-        <button><a href="{{route('home')}}">🏡 Home</a></button>
-    @endauth
+    <button><a href="{{route('equipes')}}">Equipes</a></button>
+@auth
 
+@endauth
 </header>
 
 @guest
