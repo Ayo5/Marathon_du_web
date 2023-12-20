@@ -86,7 +86,7 @@ class HomeController extends Controller
     public function show(int $id): View {
         $histoire = Histoire::find($id);
         $avis =Avis::where('histoire_id', $id)->get();
-        return view('histoires.show', ['histoire' => $histoire, 'avis'=>$avis]);
+        return view('histoire.show', ['histoire' => $histoire, 'avis'=>$avis]);
     }
      public function apropos() {
           return view('home.apropos', ['titre'=>'A propos']);

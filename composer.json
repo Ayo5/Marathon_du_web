@@ -1,9 +1,8 @@
 {
-    "name": "database/database.sqlite/laravel",
+    "name": "laravel/laravel",
     "type": "project",
     "description": "The skeleton application for the Laravel framework.",
-    "keywords": [
-        "database/database.sqlite", "framework"],
+    "keywords": ["laravel", "framework"],
     "license": "MIT",
     "require": {
         "php": "^8.1",
