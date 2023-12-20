@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Cookie;
 use Illuminate\View\View;
 
-class HomeController extends Controller
+class HistoireController extends Controller
 {
     public function index(Request $request)
     {
@@ -48,7 +48,7 @@ class HomeController extends Controller
     public function show(int $id): View {
         $histoire = Histoire::find($id);
         $avis =Avis::where('histoire_id', $id)->get();
-        return view('show', ['histoire' => $histoire, 'avis'=>$avis]);
+        return view('histoire.show', ['histoire' => $histoire, 'avis'=>$avis]);
     }
      public function apropos() {
           return view('home.apropos', ['titre'=>'A propos']);
