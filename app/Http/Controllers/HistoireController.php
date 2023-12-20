@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Cookie;
 use Illuminate\View\View;
 
-class HomeController extends Controller
+class HistoireController extends Controller
 {
     public function index(Request $request)
     {

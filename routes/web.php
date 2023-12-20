@@ -2,7 +2,6 @@
 
 use App\Http\Controllers\ChapitreController;
 use App\Http\Controllers\HistoireController;
-use App\Http\Controllers\HomeController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\EquipeController;
@@ -42,11 +41,11 @@ Route::get('/user/{idCurr}', [UserController::class, 'index'])->name('user.index
 
 Route::get('/histoire/{histoire}/chapitre/premier', [ChapitreController::class, 'premier'])->name('chapitre.premier');
 
-Route::get('/show', [HomeController::class, 'index'])->name("histoires.show");
+Route::get('/show', [HistoireController::class, 'index'])->name("histoires.show");
 
 
 
-Route::get('/histoires/create', [HomeController::class, 'create'])->name('histoires.create');
-Route::post('/histoires/store', [HomeController::class, 'store'])->name('histoires.store');
-Route::get('/histoires/encours/{id}', [HomeController::class, 'encours'])->name('histoires.encours');
+Route::get('/histoires/create', [HistoireController::class, 'create'])->name('histoires.create');
+Route::post('/histoires/store', [HistoireController::class, 'store'])->name('histoires.store');
+Route::get('/histoires/encours/{id}', [HistoireController::class, 'encours'])->name('histoires.encours');
 
