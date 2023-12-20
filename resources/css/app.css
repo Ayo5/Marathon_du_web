@@ -1,25 +1,168 @@
-html {
-    position: relative;
-    min-height: 100%;
-}
-body {
-    /* Margin bottom by footer height */
-    margin-bottom: 30px;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-main {
-    min-height: 80vh;
+body {
+    font-family: Arial, sans-serif;
+    color: #343a40;
+    height: 100vh;
+}
+
+menu {
+    background: linear-gradient(to bottom, #a792ff, #ffffff); /* Dégradé du mauve au blanc */
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    top: 0;
+    position: sticky;
+    z-index: 1000;
+    padding: 50px 40px;
+}
+
+button {
+    display: inline-block;
+    font-size: 16px;
+    font-weight: bold;
+    background-color: #dfd8fa;
+    border: none;
+    cursor: pointer;
+    color: #fff;
+    padding: 6px 10px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.7);
+    border-radius: 5px;
+}
+
+h1 {
+    font-size: 50px;
+    margin: 0;
     display: flex;
     align-items: center;
     justify-content: center;
+    color: #000000;
+}
+
+
+button:last-child {
+    background-color: #ffc5fc;
+    margin-left: auto;
 }
 
 footer {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding-top: 25px;
+    background-color: #eaeaea;
+    padding-bottom: 25px;
+}
 
-    /* Set the fixed height of the footer here */
-    height: 30px;
-    background-color: #f5f5f5;
+a:link {
+    color: #1098ad;
+    text-decoration: none;
+}
+
+a:visited {
+    color: #1098ad;
+}
+
+a:hover {
+    color: orangered;
+    font-weight: bold;
+    text-decoration: underline orangered;
+}
+
+a:active {
+    background-color: black;
+    font-style: italic;
+}
+
+.a-droite {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+img {
+    width: 350px;
+    height: auto;
+}
+
+.divScene {
+    margin-bottom: 20px;
+    text-align: center; /* Center the child elements */
+}
+
+.scene {
+    text-align: center;
+    margin: 5px 5px 5px 5px;
+    min-width: 250px;
+    min-height: 225px;
+    display: inline-block;
+    box-sizing: border-box;
+    margin-right: 10px;
+}
+
+.paraScene {
+    font-weight: bold;
+}
+
+.form {
+    margin-left: 15px;
+}
+
+.center-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 10vh;
+}
+
+.logo {
+    width: 200px;
+    height: auto;
+}
+
+
+
+
+/* CSS pour le formulaire */
+/* Styles spécifiques au formulaire de contact */
+.contact-form {
+    max-width: 400px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.contact-form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.contact-form button {
+    background-color: #4caf50;
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.contact-form button:hover {
+    background-color: #45a049;
 }

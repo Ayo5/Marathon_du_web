@@ -8,30 +8,18 @@
     @vite(["resources/css/normalize.css", 'resources/css/app.css', 'resources/js/app.js'])
 </head>
 <body>
-<header>Ma super application</header>
-<nav>
-    <a href="{{route('index')}}">Accueil</a>
-    <a href="{{route('test-vite')}}">Test Vite</a>
-    <a href="#">Contact</a>
-    <a href="{{route('equipes')}}">Equipes</a>
 
-@auth
-        {{Auth::user()->name}}
-        <a href="{{route("logout")}}"
-           onclick="document.getElementById('logout').submit(); return false;">Logout</a>
-        <form id="logout" action="{{route("logout")}}" method="post">
-            @csrf
-        </form>
-    @else
-        <a href="{{route("login")}}">Login</a>
-        <a href="{{route("register")}}">Register</a>
-    @endauth
-</nav>
+<menu>
+    <x-header>
+    </x-header>
+</menu>
 
 <main>
     @yield("content")
 </main>
 
-<footer>IUT de Lens</footer>
+<footer>
+    <x-footer></x-footer>
+</footer>
 </body>
 </html>

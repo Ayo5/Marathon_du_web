@@ -3,7 +3,7 @@
 @section('content')
     <div style="text-align: center;">
         <div>
-            <b>Le marathon du WEB 2023 !!!</b>
+            <h1>Le marathon du WEB 2023</h1>
         </div>
     </div>
 
