@@ -38,4 +38,17 @@ class Histoire extends Model
     public function terminees() {
         return $this->belongsToMany(User::class, "terminees", "histoire_id", "user_id")->withPivot("nombre");
     }
+
+    public function dernierChapitre() {
+        return $this->chapitres()->latest()->first();
+    }
+
+    public function scopeTerminee(Builder $query) {
+        return $query->whereHas('terminees', function ($query) {
+            $query->where('user_id', auth()->id());
+        });
+    }
+
+    protected $fillable = ['titre', 'pitch', 'photo', 'genre_id', 'active'];
+
 }

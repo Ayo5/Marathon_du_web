@@ -45,6 +45,35 @@ class HomeController extends Controller
         return view('welcome', ['histoires' => $histoires, 'genres' => $genres, 'cat' => $cat]);
     }
 
+    public function create() {
+        $genres = Genre::all();
+        return view('create', ['genres' => $genres]);
+    }
+
+
+    public function store(Request $request) {
+        $validatedData = $request->validate([
+            'titre' => 'required|string|max:255',
+            'photo' => 'required|string',
+            'pitch' => 'required|string',
+            'genre_id' => 'required|exists:genres,id',
+        ]);
+
+        $active = optional($request->input('active'))->has('active') ? true : false;
+
+        $histoire = Histoire::create([
+            'titre' => $validatedData['titre'],
+            'photo' => $validatedData['photo'],
+            'pitch' => $validatedData['pitch'],
+            'genre_id' => $validatedData['genre_id'],
+            'active' => $active,
+
+        ]);
+
+        return redirect()->route('show', $histoire->id)
+            ->with('success', 'L\'histoire a été créée avec succès.');
+    }
+
     public function show(int $id): View {
         $histoire = Histoire::find($id);
         $avis =Avis::where('histoire_id', $id)->get();

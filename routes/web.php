@@ -27,3 +27,9 @@ Route::get('/test-vite', function () {
 })->name("test-vite");
 
 Route::get('/equipes', [EquipeController::class, 'index'])->name("equipes");
+
+
+
+Route::get('/histoires/create', [HomeController::class, 'create'])->name('histoires.create');
+Route::post('/histoires/store', [HomeController::class, 'store'])->name('histoires.store');
+
