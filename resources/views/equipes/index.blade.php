@@ -21,6 +21,12 @@
     @endforeach
 </ul>
 
+<h3>Salle</h3>
+
+<p>
+    {{$equipe['localisation']}}
+</p>
+
 <p>{{ $equipe['autres'] }}</p>
 
 <script src="{{ mix('js/app.js') }}"></script>
