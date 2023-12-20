@@ -17,7 +17,7 @@
     <a href="{{route('index')}}">Accueil</a>
     <a href="{{route('test-vite')}}">Test Vite</a>
     <a href="{{route('contact')}}">Contact</a>
-
+    <a href="{{route('equipes')}}">Equipes</a>
     @auth
         {{Auth::user()->name}}
         <a href="{{route("logout")}}"

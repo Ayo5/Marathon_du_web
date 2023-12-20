@@ -2,20 +2,19 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-
 class EquipeController extends Controller
 {
     public function index(){
         $equipe= [
-            'nomEquipe'=>"L'equipe de l'année !",
-            'logo'=>"referenceDuFichier",
+            'nomEquipe'=>"Lucky Seven",
+            'logo'=>"/images/logo.jpg",
             'slogan'=>"....",
-            'localisation'=>"numero de la salle",
+            'localisation'=>"Salle 1X",
             'membres'=> [
-                [ 'nom'=>"nom",'prenom'=>"prenom", 'image'=>"nomFichier", 'fonctions'=>["validateur","développer", "concepteur"] ],
-                [ 'nom'=>"nom",'prenom'=>"prenom", 'image'=>"nomFichier", 'fonctions'=>["validateur","développer", "concepteur"] ],
-                [ 'nom'=>"nom",'prenom'=>"prenom", 'image'=>"nomFichier", 'fonctions'=>["validateur","développer", "concepteur"] ],
+                [ 'nom'=>"Djedid",'prenom'=>"Adel", 'image'=>"nomFichier", 'fonctions'=>["développer", "concepteur"] ],
+                [ 'nom'=>"Dai",'prenom'=>"Abdelkader", 'image'=>"nomFichier", 'fonctions'=>["développer", "concepteur"] ],
+                [ 'nom'=>"Vanbandon",'prenom'=>"Théo", 'image'=>"nomFichier", 'fonctions'=>["validateur","développer", "concepteur"] ],
+                [ 'nom'=>"Grasso",'prenom'=>"Antoine", 'image'=>"nomFichier", 'fonctions'=>["développer", "concepteur"] ],
             ],
             'autres'=>"Autre chose",
         ];
