@@ -2,6 +2,23 @@
 
 @section('content')
     <div class="wrap">
+        <div>
+            <p>
+                Pour les avatar, vous avez le choix entre:
+            </p>
+            <div>
+                <p>Batman</p>
+                <img src="{{url('storage/images/Batman.png')}}">
+                <p>Homme</p>
+                <img src="{{url('storage/images/Homme.png')}}">
+                <p>Homme2</p>
+                <img src="{{url('storage/images/Homme2.png')}}">
+                <p>Femme</p>
+                <img src="{{url('storage/images/Femme.png')}}">
+                <p>Femme2</p>
+                <img src="{{url('storage/images/Femme2.png')}}">
+            </div>
+        </div>
         <form class="login-form" action="{{route('register')}}" method="post">
             @csrf
             <div class="form-header">
@@ -25,13 +42,6 @@
                 <input type="password" name="password_confirmation" class="form-input" placeholder="Confirmez mot de passe">
             </div>
             <!--Avatar_link-->
-            <p>
-                Pour l'avatar, choix entre:
-            </p>
-            <p class="paraRegister">
-                "Batman", "Homme",
-                "Femme", "Homme2" et "Femme2"
-            </p>
             <div class="form-group">
                 <input type="text" name="avatar_link" class="form-input" placeholder="Nom de l'avatar">
             </div>
