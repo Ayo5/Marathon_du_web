@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\EquipeController;
 
@@ -15,9 +16,7 @@ use App\Http\Controllers\EquipeController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-})->name("index");
+Route::get('/', [HomeController::class, 'index'])->name('index');;
 
 Route::get('/contact', function () {
     return view('contact');
