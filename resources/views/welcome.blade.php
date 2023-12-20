@@ -30,8 +30,8 @@
                 <tr style="text-align: center;">
                     <td><b>{{$histoire->titre}}</b></td>
                     <td><b>{{$histoire->pitch}}</b></td>
-                    <td><b>{{$histoire->photo}}</b></td>
-                    <td><a href="{{ route('show', ['id' => $histoire->id]) }}">Voir</a></td>
+                    <td><img src="{{ asset($histoire->photo) }}" alt="Image de l'histoire"></td>
+                    <td><a href="{{ route('histoire.show', ['id' => $histoire->id]) }}">Voir</a></td>
                 </tr>
             @endforeach
             </tbody>
