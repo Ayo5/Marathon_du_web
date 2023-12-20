@@ -4,6 +4,7 @@
         <div class="divScene">
 
                 <div>
+                    <img src="{{url('storage/images/'.$user->avatar_link.'.png')}}">
                     <p>Nom: {{$user->name}}</p>
                     <p>E-mail: {{$user->email}}</p>
                     <p>Nombre d'œuvres lues: {{$nombreOeuvresTerminees}}</p>
