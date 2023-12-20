@@ -2,20 +2,17 @@
     <button><a href="{{route('index')}}">🏛 Accueil</a></button>
     <button><a href="{{route('test-vite')}}">Test Vite</a></button>
     <button><a href="{{route('contact')}}">☎️ Contact</a></button>
-    <button><a href="{{route('equipes')}}">Equipes</a></button>
-@auth
+    <button><a href="{{route('equipes')}}">👨🏻‍💻 Équipes</a></button>
 
-@endauth
-</header>
+    @auth
+        <button><a href="{{route('home')}}">🏡 Home</a></button>
+        <button><a href="{{route('test-vite')}}">🧪 Test Vite</a></button>
+        <button><a href="{{route('equipes')}}">👨🏻‍💻 Équipes</a></button>
+    @endauth
 
 @guest
-    <div class="a-droite">
-        <div class="center-image">
-            <img class="logo" src="{{url('storage/images/Logo.png') }}" alt="Logo du site">
-        </div>
         <button><a href="{{route('register')}}">📥 Enregistrement</a></button>
         <button><a href="{{route('login')}}">😎 Connexion</a></button>
-    </div>
 @endguest
 @auth
     <div class="a-droite">

@@ -8,31 +8,22 @@
     <!-- Fonts -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Redacted+Script:wght@400">
 
-    @vite(['resources/css/test-vite.css', 'resources/js/test-vite.js'])
+    @vite(['resources/css/test-vite.css', 'resources/js/test-vite.js', 'resources/css/normalize.css', 'resources/css/app.css', 'resources/js/app.js'])
     <title>{{$titre ?? "Application Laravel"}}</title>
 </head>
 <body>
-<header>Ma super application</header>
-<nav>
-    <a href="{{route('index')}}">Accueil</a>
-    <a href="{{route('test-vite')}}">Test Vite</a>
-    <a href="{{route('contact')}}">Contact</a>
-    <a href="{{route('equipes')}}">Equipes</a>
-    @auth
-        {{Auth::user()->name}}
-        <a href="{{route("logout")}}"
-           onclick="document.getElementById('logout').submit(); return false;">Logout</a>
-        <form id="logout" action="{{route("logout")}}" method="post">
-            @csrf
-        </form>
-    @else
-        <a href="{{route("login")}}">Login</a>
-        <a href="{{route("register")}}">Register</a>
-    @endauth
-</nav>
+
+<menu>
+    <x-header>
+    </x-header>
+</menu>
+
 <main class="main-container">
     {{$slot}}
 </main>
-<footer>IUT de Lens</footer>
+
+<footer>
+    <x-footer></x-footer>
+</footer>
 </body>
 </html>
