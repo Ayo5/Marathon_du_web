@@ -2,7 +2,7 @@
     <button><a href="{{route('index')}}">🏛 Accueil</a></button>
     <button><a href="{{route('contact')}}">☎️ Contact</a></button>
     @auth
-        <button><a href="{{route('home')}}">🏡 Home</a></button>
+        <!-- Ajout de bouton qui sont disponible uniquement une fois connecté -->
     @endauth
 
 </header>
