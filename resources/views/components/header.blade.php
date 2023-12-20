@@ -7,7 +7,6 @@
     @auth
         <button><a href="{{route('home')}}">🏡 Home</a></button>
         <button><a href="{{route('test-vite')}}">🧪 Test Vite</a></button>
-        <button><a href="{{route('equipes')}}">👨🏻‍💻 Équipes</a></button>
     @endauth
 
 @guest
