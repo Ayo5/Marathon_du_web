@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ChapitreController;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\EquipeController;
@@ -27,3 +28,5 @@ Route::get('/test-vite', function () {
 })->name("test-vite");
 
 Route::get('/equipes', [EquipeController::class, 'index'])->name("equipes");
+
+Route::get('/histoire/{histoire}/chapitre/premier', [ChapitreController::class, 'premier'])->name('chapitre.premier');

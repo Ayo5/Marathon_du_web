@@ -28,6 +28,10 @@
                 <p><strong>Avis :</strong>{{ $avisDeHistoire->contenu}}</p>
                 @endforeach
             </div>
+           <div>
+                {{-- bouton pour démarrer la lecture de l'histoire --}}
+                <a href="{{ route('chapitre.premier', ['histoire' => $histoire->id]) }}" class="btn btn-primary">Commencer la lecture</a>
+            </div>
         </div>
     @endif
 </x-layout>
