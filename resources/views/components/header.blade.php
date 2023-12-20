@@ -2,7 +2,9 @@
     <button><a href="{{route('index')}}">🏛 Accueil</a></button>
     <button><a href="{{route('contact')}}">☎️ Contact</a></button>
     @auth
-        <!-- Ajout de bouton qui sont disponible uniquement une fois connecté -->
+        <button><a href="{{route('home')}}">🏡 Home</a></button>
+        <button><a href="{{route('test-vite')}}">🧪 Test Vite</a></button>
+        <button><a href="{{route('equipes')}}">👨🏻‍💻 Équipes</a></button>
     @endauth
 
 </header>
