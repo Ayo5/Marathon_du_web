@@ -1,6 +1,7 @@
 <?php
 
-use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ChapitreController;
+use App\Http\Controllers\HistoireController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\EquipeController;
 
@@ -16,8 +17,11 @@ use App\Http\Controllers\EquipeController;
 |
 */
 
-Route::get('/', [HomeController::class, 'index'])->name('index');;
-Route::get('/histoire/{id}', [HomeController::class, 'show'])->name('show');
+Route::get('/', [HistoireController::class, 'index'])->name('index');;
+Route::get('/histoire/{id}', [HistoireController::class, 'show'])->name('histoire.show');
+Route::get('/histoire/{id}/chapitre/first', [ChapitreController::class, 'show'])->name('chapitre.show');
+Route::get('/histoire/{id}/chapitre/next', [ChapitreController::class, 'show'])->name('chapitre.showNext');
+
 Route::get('/contact', function () {
     return view('contact');
 })->name("contact");
