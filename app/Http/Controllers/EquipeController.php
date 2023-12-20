@@ -7,7 +7,7 @@ class EquipeController extends Controller
     public function index(){
         $equipe= [
             'nomEquipe'=>"Lucky Seven",
-            'logo'=>"/public/images/logo.jpg",
+            'logo'=>"/images/logo.jpg",
             'slogan'=>"....",
             'localisation'=>"Salle 1X",
             'membres'=> [
