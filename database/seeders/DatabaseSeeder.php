@@ -10,7 +10,7 @@ use Illuminate\Support\Str;
 class DatabaseSeeder extends Seeder
 {
     /**
-     * Seed the application's database.
+     * Seed the application's database.sqlite.
      */
     public function run(): void
     {

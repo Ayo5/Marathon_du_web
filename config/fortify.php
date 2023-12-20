@@ -56,7 +56,7 @@ return [
     |--------------------------------------------------------------------------
     |
     | This value defines whether usernames should be lowercased before saving
-    | them in the database, as some database system string fields are case
+    | them in the database.sqlite, as some database.sqlite system string fields are case
     | sensitive. You may disable this for your application if necessary.
     |
     */
