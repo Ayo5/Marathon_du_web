@@ -31,6 +31,7 @@
                     <td><b>{{$histoire->titre}}</b></td>
                     <td><b>{{$histoire->pitch}}</b></td>
                     <td><b>{{$histoire->photo}}</b></td>
+                    <td><a href="{{ route('show', ['id' => $histoire->id]) }}">Voir</a></td>
                 </tr>
             @endforeach
             </tbody>
