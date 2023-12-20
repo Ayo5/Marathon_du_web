@@ -32,4 +32,4 @@ Route::get('/equipes', [EquipeController::class, 'index'])->name("equipes");
 Route::get('/home', function () {
     return view('auth.dashboard');
 })->middleware(['auth'])->name('home');
-Route::get('/user', [UserController::class, 'index'])->name('user.index')->middleware(['auth']);
+Route::get('/user/{idCurr}', [UserController::class, 'index'])->name('user.index')->middleware(['auth']);
