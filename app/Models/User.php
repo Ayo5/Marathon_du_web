@@ -29,7 +29,6 @@ class User extends Authenticatable {
         return $this->belongsToMany(Histoire::class, 'lectures')->using(Lecture::class);
     }
 
-
     /**
      * The attributes that are mass assignable.
      *

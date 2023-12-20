@@ -19,6 +19,7 @@
 @endguest
 @auth
     <div class="a-droite">
+        <button><a href="{{route('histoires.create')}}">Nouvelle Histoire</a></button>
         {{Auth::user()->name}}
         <button><a href="#" id="logout">Logout</a>
         </button>

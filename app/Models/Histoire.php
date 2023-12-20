@@ -49,6 +49,6 @@ class Histoire extends Model
         });
     }
 
-    protected $fillable = ['titre', 'pitch', 'photo', 'genre_id', 'active'];
+    protected $fillable = ['titre', 'pitch', 'photo', 'genre_id', 'active', 'user_id'];
 
 }

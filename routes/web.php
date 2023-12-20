@@ -28,8 +28,11 @@ Route::get('/test-vite', function () {
 
 Route::get('/equipes', [EquipeController::class, 'index'])->name("equipes");
 
+Route::get('/show', [HomeController::class, 'index'])->name("histoires.show");
+
 
 
 Route::get('/histoires/create', [HomeController::class, 'create'])->name('histoires.create');
 Route::post('/histoires/store', [HomeController::class, 'store'])->name('histoires.store');
+Route::get('/histoires/encours/{id}', [HomeController::class, 'encours'])->name('histoires.encours');
 

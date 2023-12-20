@@ -47,11 +47,18 @@ class HomeController extends Controller
 
     public function create() {
         $genres = Genre::all();
-        return view('create', ['genres' => $genres]);
+        return view('histoires.create', ['genres' => $genres]);
+    }
+
+    public function encours($id) {
+        $histoire = Histoire::find($id);
+        return view('histoires.encours', ['histoire' => $histoire]);
     }
 
 
-    public function store(Request $request) {
+
+    public function store(Request $request)
+    {
         $validatedData = $request->validate([
             'titre' => 'required|string|max:255',
             'photo' => 'required|string',
@@ -61,23 +68,25 @@ class HomeController extends Controller
 
         $active = optional($request->input('active'))->has('active') ? true : false;
 
+
         $histoire = Histoire::create([
             'titre' => $validatedData['titre'],
             'photo' => $validatedData['photo'],
             'pitch' => $validatedData['pitch'],
             'genre_id' => $validatedData['genre_id'],
             'active' => $active,
+            'user_id' => auth()->user()->id,
 
         ]);
-
-        return redirect()->route('show', $histoire->id)
+        return redirect()->route('histoires.encours', ['id' => $histoire->id])
             ->with('success', 'L\'histoire a été créée avec succès.');
     }
+
 
     public function show(int $id): View {
         $histoire = Histoire::find($id);
         $avis =Avis::where('histoire_id', $id)->get();
-        return view('show', ['histoire' => $histoire, 'avis'=>$avis]);
+        return view('histoires.show', ['histoire' => $histoire, 'avis'=>$avis]);
     }
      public function apropos() {
           return view('home.apropos', ['titre'=>'A propos']);
