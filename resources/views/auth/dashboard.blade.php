@@ -6,6 +6,12 @@
             Vous pouvez retrouvez vos informations de base en cliquant
             sur le bouton ci-dessous:
         </p>
-        <button><a href="{{route('user.index')}}">Information utilisateur</a></button>
+
+        <button>
+            <a href="{{ route('user.index', ['idCurr' => Auth::user()->id]) }}">
+                Information utilisateur
+            </a>
+        </button>
+
     </div>
 </x-layout>
