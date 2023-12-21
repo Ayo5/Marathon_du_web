@@ -1,9 +1,9 @@
 @font-face {
     font-family: "Rounded_Elegance";
     src:
-      local("Rounded_Elegance");
-      src: url("../fonts/Rounded_Elegance.ttf") format('truetype');
-  }
+            local("Rounded_Elegance");
+    src: url("../fonts/Rounded_Elegance.ttf") format('truetype');
+}
 
 
 * {
@@ -51,7 +51,7 @@ header{
     margin-bottom: 16px;
 }
 
-.header-story:hover{ 
+.header-story:hover{
     background-color: #ebbdec;
 }
 
@@ -637,63 +637,63 @@ select {
     border-radius: 5px;
     border: 1px solid #ccc;
     width: 200px; /* Ajustez la largeur selon vos besoins */
-  }
-  
-  /* Style pour les options du select */
-  select option {
+}
+
+/* Style pour les options du select */
+select option {
     font-size: 14px;
     background-color: #fff;
     color: #333;
-  }
-  
-  /* Style pour l'option par défaut sélectionnée */
-  select option[value="All"] {
+}
+
+/* Style pour l'option par défaut sélectionnée */
+select option[value="All"] {
     font-style: italic;
     color: #999;
-  }
+}
 
 
-  /*voir les chapitres écrits*/
-  .chapitres-container {
+/*voir les chapitres écrits*/
+.chapitres-container {
     margin-top: 20px;
-  }
-  
-  .chapitres-container h3 {
+}
+
+.chapitres-container h3 {
     font-size: 20px;
     margin-bottom: 10px;
-  }
-  
-  .chapitres-ecrits {
+}
+
+.chapitres-ecrits {
     width: 100%;
     border-collapse: collapse;
     margin-top: 10px;
     margin-top: 16px;
     margin-bottom: 16px;
-  }
-  
-  .chapitres-ecrits th,
-  .chapitres-ecrits td {
+}
+
+.chapitres-ecrits th,
+.chapitres-ecrits td {
     border: 1px solid #ccc;
     padding: 8px;
     text-align: left;
-  }
-  
-  .chapitres-ecrits th {
+}
+
+.chapitres-ecrits th {
     background-color: #f2f2f2;
     font-weight: bold;
-  }
+}
 
-  .button-encours{
+.button-encours{
     display: flex;
     justify-content: space-between;
     margin-top: 16px;
-  }
+}
 
-  .avis-encours{
+.avis-encours{
     margin-top: 8px;
     margin-bottom: 4px;
     border: solid gainsboro 1px;
     padding: 10px;
     border-radius: 9px;
     box-shadow: 4px 6px 16px 0px rgba(0,0,0,0.3);
-  }
+}

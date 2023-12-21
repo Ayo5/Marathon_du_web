@@ -23,13 +23,13 @@
         </div>
         <div>
             {{-- la photo de l'histoire --}}
-            <p><strong>Photo : </strong><img src="{{ asset($histoire->photo) }}" alt="Image de l'histoire"> </p>
+            <p><strong>Photo : </strong>{{ $histoire->photo }}</p>
         </div>
         <div>
             {{-- Avis de l'histoire --}}
             <p><strong>Avis :</strong></p>
             @forelse($avis as $avisDeHistoire)
-                <p> {{$avisDeHistoire->user->name}} : {{ $avisDeHistoire->contenu }}</p>
+                <p class="avis-encours"> {{$avisDeHistoire->user->name}} <br/> {{ $avisDeHistoire->contenu }}</p>
                 @if(auth()->id() == $avisDeHistoire->user_id)
                     <form action="{{ route('avis.edit', ['id' => $avisDeHistoire->id]) }}" method="GET" style="display: inline;">
                         <button type="submit" class="btn btn-warning">Modifier</button>
@@ -48,7 +48,7 @@
         <!-- Affichage des chapitres -->
         <div>
             <h3>Chapitres de l'histoire</h3>
-            <table>
+            <table class="chapitres-ecrits">
                 <thead>
                 <tr>
                     <th>ID</th>
