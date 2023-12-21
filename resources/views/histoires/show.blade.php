@@ -64,6 +64,14 @@
                 {{-- Bouton pour démarrer la lecture de l'histoire --}}
                 <a href="{{ route('chapitre.create', ['histoireId' => $histoire->id]) }}" class="btn btn-primary">Ajouter un nouveau chapitre</a>
             </div>
+
+            <div>
+                {{-- Bouton pour activer l'histoire --}}
+                <form action="{{ route('histoire.activer', ['id' => $histoire->id]) }}" method="post">
+                    @csrf
+                    <button type="submit" class="btn btn-success">Activer l'histoire</button>
+                </form>
+            </div>
         </div>
     @endif
 </x-layout>

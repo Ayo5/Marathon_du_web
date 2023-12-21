@@ -102,6 +102,13 @@ class HistoireController extends Controller
           return view('home.contact', ['titre'=>'Contact']);
      }
 
+    public function activer($id)
+    {
+        $histoire = Histoire::findOrFail($id);
 
+        $histoire->update(['active' => true]);
+
+        return redirect()->route('histoires.show', ['id' => $histoire->id])->with('success', 'Histoire activée avec succès');
+    }
 
 }
