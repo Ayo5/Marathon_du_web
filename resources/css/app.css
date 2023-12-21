@@ -5,126 +5,76 @@
 }
 
 body {
-    font-family: Arial, sans-serif;
+    font-family: "Rounded_Elegance", sans-serif;
+    src: url('/fonts/Rounded_Elegance.ttf') format('ttf');
     color: #343a40;
-    height: 100vh;
+    background-color: white;
 }
 
-menu {
-    background: linear-gradient(to bottom, #a792ff, #ffffff); /* Dégradé du mauve au blanc */
+header{
+    padding-top: 2em;
+    padding-bottom: 2em;
+    padding-left: 10%;
+    padding-right: 10%;
+    background-color: #154B5F;
+    display: flex;
+    color: white;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-story{
+    background-color: #512B47;
+    padding: 1em;
+    border-radius: 90px;
+    margin-left: 0.5em;
+    margin-right: 0.5em;
+    border: solid #281423 1px;
+}
+
+/*.header-story:hover{ 
+    background-color: ;
+}*/
+
+.header-logo{
     display: flex;
     align-items: center;
-    gap: 12px;
-    top: 0;
-    position: sticky;
-    z-index: 1000;
-    padding: 50px 40px;
 }
 
-button {
-    display: inline-block;
-    font-size: 16px;
-    font-weight: bold;
-    background-color: #dfd8fa;
-    border: none;
-    cursor: pointer;
-    color: #fff;
-    padding: 6px 10px;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.7);
-    border-radius: 5px;
-}
-
-h1 {
-    font-size: 50px;
-    margin: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #000000;
-}
-
-
-button:last-child {
-    background-color: #ffc5fc;
-    margin-left: auto;
-}
-
-footer {
-    display: flex;
-    justify-content: center;
-    padding-top: 25px;
-    background-color: #eaeaea;
-    padding-bottom: 25px;
-}
-
-a:link {
-    color: #1098ad;
+header a{
     text-decoration: none;
+    color: white;
 }
 
-a:visited {
-    color: #1098ad;
+.a-droite a{
+    justify-content: space-around;
 }
 
-a:hover {
-    color: orangered;
-    font-weight: bold;
-    text-decoration: underline orangered;
-}
 
-a:active {
-    background-color: black;
-    font-style: italic;
-}
-
-.a-droite {
-    margin-left: auto;
+.footer{
+    background-color: #154B5F;
+    color: white;
+    padding: 20px;
     display: flex;
+    justify-content: space-between;
     align-items: center;
-    gap: 12px;
 }
 
-img {
-    width: 350px;
-    height: auto;
+.footer-right{
+    text-align: end;
 }
 
-.divScene {
-    margin-bottom: 20px;
-    text-align: center; /* Center the child elements */
+.footer-right a{
+    text-decoration: none;
+    color: white;
 }
 
-.scene {
-    text-align: center;
-    margin: 5px 5px 5px 5px;
-    min-width: 250px;
-    min-height: 225px;
-    display: inline-block;
-    box-sizing: border-box;
-    margin-right: 10px;
+main{
+    min-height: 80vh;
+    width: 80%;
+    margin-left: 10%;
+    margin-right: auto;
 }
-
-.paraScene {
-    font-weight: bold;
-}
-
-.form {
-    margin-left: 15px;
-}
-
-.center-image {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 10vh;
-}
-
-.logo {
-    width: 200px;
-    height: auto;
-}
-
-
 
 
 /* CSS pour le formulaire */

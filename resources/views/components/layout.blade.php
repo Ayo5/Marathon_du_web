@@ -7,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <!-- Fonts -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Redacted+Script:wght@400">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 
     @vite(['resources/css/test-vite.css', 'resources/js/test-vite.js', 'resources/css/normalize.css', 'resources/css/app.css', 'resources/js/app.js'])
     <title>{{$titre ?? "Application Laravel"}}</title>
