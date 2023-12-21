@@ -2,19 +2,27 @@
 
 @section('content')
     <div class="wrap">
-        <div>
-            <p>
-                Pour les avatar, vous avez le choix entre:
-            </p>
-            <div>
+        <p>
+            Pour les avatar, vous avez le choix entre:
+        </p>
+        <div class="affichage-avatar">
+            <div class="avatars">
                 <p>Batman</p>
                 <img src="{{url('storage/images/Batman.png')}}">
+            </div>
+            <div class="avatars">
                 <p>Homme</p>
                 <img src="{{url('storage/images/Homme.png')}}">
+            </div>
+            <div class="avatars">
                 <p>Homme2</p>
                 <img src="{{url('storage/images/Homme2.png')}}">
+            </div>
+            <div class="avatars">
                 <p>Femme</p>
                 <img src="{{url('storage/images/Femme.png')}}">
+            </div>
+            <div class="avatars">
                 <p>Femme2</p>
                 <img src="{{url('storage/images/Femme2.png')}}">
             </div>

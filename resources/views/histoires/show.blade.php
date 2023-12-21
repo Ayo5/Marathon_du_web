@@ -12,39 +12,47 @@
         <div class="d-flex justify-content-center flex-column align-items-center">
             <div>
                 {{-- le titre de l'histoire --}}
-                <p><strong>Titre : </strong>{{ $histoire->titre }}</p>
+                <p class="story-title"><strong>Titre : </strong>{{ $histoire->titre }}</p>
             </div>
-            <div>
-                {{-- le pitch de l'histoire --}}
-                <p><strong>Pitch : </strong>{{ $histoire->pitch }}</p>
-            </div>
-            <div>
+            <div class="story-pic">
                 {{-- la photo de l'histoire --}}
-                <p><strong>Photo : </strong>{{ $histoire->photo }}</p>
+                <img src="{{ asset($histoire->photo) }}" alt="Image de l'histoire">
             </div>
-            <div>
+            <div class="story-pitch">
+                {{-- le pitch de l'histoire --}}
+                <p><strong>Pitch : </strong><br/>{{ $histoire->pitch }}</p>
+            </div>
+            
+            <div class="lecture-book">
+                {{-- Bouton pour démarrer la lecture de l'histoire --}}
+
+                <a href="{{ route('chapitre.premier', ['histoire' => $histoire->id]) }}" class="btn btn-primary histoires-link">Commencer la lecture</a>
+            </div>
+
+            <div  class="avis-histoires">
                 {{-- Avis de l'histoire --}}
                 <p><strong>Avis :</strong></p>
                 @forelse($avis as $avisDeHistoire)
                     <p> {{$avisDeHistoire->user_id}} : {{ $avisDeHistoire->contenu }}</p>
                     @if(auth()->id() == $avisDeHistoire->user_id)
-                        <form action="{{ route('avis.edit', ['id' => $avisDeHistoire->id]) }}" method="GET" style="display: inline;">
-                            <button type="submit" class="btn btn-warning">Modifier</button>
-                        </form>
-                        <form action="{{ route('avis.destroy', ['id' => $avisDeHistoire->id]) }}" method="POST" style="display: inline;">
-                            @csrf
-                            @method('DELETE')
-                            <button type="submit" class="btn btn-danger">Supprimer</button>
-                        </form>
-
+                        <div class="modif-com">
+                            <form action="{{ route('avis.edit', ['id' => $avisDeHistoire->id]) }}" method="GET" style="display: inline;">
+                                <button type="submit" class="btn btn-warning histoires-link">Modifier</button>
+                            </form>
+                            <form action="{{ route('avis.destroy', ['id' => $avisDeHistoire->id]) }}" method="POST" style="display: inline;">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" class="btn btn-danger histoires-link">Supprimer</button>
+                            </form>
+                        </div>
                     @endif
                 @empty
                     <p>Aucun avis pour cette histoire.</p>
                 @endforelse
             </div>
-            <div>
+            <div class="lecture-book">
                 {{-- Bouton pour créer un nouvel avis --}}
-                <a href="{{ route('avis.create', ['id' => $histoire->id]) }}" class="btn btn-primary">Poster un avis</a>
+                <a href="{{ route('avis.create', ['id' => $histoire->id]) }}" class="btn btn-primary histoires-link">Poster un avis</a>
             </div>
 
             <div>
