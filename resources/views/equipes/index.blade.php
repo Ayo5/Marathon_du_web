@@ -8,7 +8,7 @@
         <div class="grid-equipe">
             @foreach($equipe['membres'] as $membre)
                     <div class="equipe-membre">
-                        <img src="{{ asset('images/' . $membre['image']) }}" alt="{{ $membre['nom'] }}">
+                        <img src="{{ asset('images/' . $membre['prenom'] . '.jpg') }}" alt="{{ $membre['nom'] }}">
                         <h3>{{ $membre['prenom'] }} {{ $membre['nom'] }}</h3>
                         <p>Fonctions: {{ implode(', ', $membre['fonctions']) }}</p>
                     </div>

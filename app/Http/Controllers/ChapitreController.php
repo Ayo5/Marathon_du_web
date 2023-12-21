@@ -89,4 +89,5 @@ class ChapitreController extends Controller
         return redirect()->route('chapitre.show', ['histoire' => $histoire, 'id' => $request->input('chapitre_source_id')])
             ->with('success', 'Chapitres liés avec succès');
     }
+
 }
