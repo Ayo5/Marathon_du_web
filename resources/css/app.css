@@ -251,3 +251,61 @@ main{
     color: #ff0000;
     margin-bottom: 10px;
 }
+
+
+
+/* Code CSS pour la page 404 */
+.error-container {
+    font-family: 'Arial', sans-serif;
+    background-color: #f8f8f8;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.error-content {
+    text-align: center;
+}
+
+.error-message {
+    font-size: 2em;
+    color: #333;
+}
+
+.error-description {
+    font-size: 1.2em;
+    color: #555;
+    margin-top: 10px;
+}
+
+/* Ajuster la marge du bouton et retirer la marge supérieure */
+.back-to-home {
+    margin-top: 10px; /* Ajuster la marge pour éviter le chevauchement */
+    margin-bottom: 10px;
+    text-decoration: none;
+    padding: 10px 20px;
+    background-color: #ef98ee;
+    color: #fff;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    display: inline-block; /* Ajouter cette propriété pour empêcher le chevauchement */
+}
+
+.back-to-home:hover {
+    background-color: #ebbdec;
+}
+
+.main-container {
+    text-align: center;
+}
+
+.imgErreur404 {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 400px;
+    height: auto;
+}
