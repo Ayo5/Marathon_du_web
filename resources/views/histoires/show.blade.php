@@ -67,7 +67,7 @@
 
             <div>
                 {{-- Bouton pour activer l'histoire --}}
-                <form action="{{ route('histoire.activer', ['id' => $histoire->id]) }}" method="post">
+                <form action="{{ route('histoires.activer', ['id' => $histoire->id]) }}" method="post">
                     @csrf
                     <button type="submit" class="btn btn-success">Activer l'histoire</button>
                 </form>

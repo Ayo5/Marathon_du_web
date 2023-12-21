@@ -19,6 +19,5 @@
             {{ $equipe['localisation'] }}
         </p>
         <p>{{ $equipe['autres'] }}</p>
-        <script src="{{ mix('js/app.js') }}"></script>
     </div>
 @endsection
