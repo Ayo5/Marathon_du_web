@@ -1,3 +1,11 @@
+@font-face {
+    font-family: "Rounded_Elegance";
+    src:
+      local("Rounded_Elegance");
+      src: url("../fonts/Rounded_Elegance.ttf") format('truetype');
+  }
+
+
 * {
     margin: 0;
     padding: 0;
@@ -5,11 +13,19 @@
 }
 
 body {
-    font-family: "Rounded_Elegance", sans-serif;
-    src: url('/fonts/Rounded_Elegance.ttf') format('ttf');
+    font-family: "Rounded_Elegance";
+    /*src: url('/fonts/Rounded_Elegance.ttf') format('ttf');*/
     color: #343a40;
-    background-color: white;
+    background-image: url('/public/storage/images/motif_readdrasil_2_low.png');
+    background-repeat: repeat;
+    background-size: 100%;
 }
+
+.welcome {
+    padding: 20px; /* Ajoute un espace intérieur à la div au lieu d'utiliser une marge */
+    background-clip: inherit; /* Positionne le fond uniquement dans la zone de contenu (sans considérer le padding) */
+}
+
 
 header{
     padding-top: 12px;
@@ -202,7 +218,7 @@ main{
 
 .avis-histoires{
     width: 800px;
-    display: flex;
+    display: block3;
     flex-direction: column;
     padding: auto;
     margin: auto;
@@ -512,6 +528,12 @@ main{
     margin: 16px;
 }
 
+.equipe-membre img{
+    width: 300px;
+    border-radius: 16px;
+    align-self: center;
+}
+
 /*bouton accés profil*/
 .bouton-profile{
     background-color: #512B47;
@@ -540,7 +562,7 @@ main{
     display: flex;
     text-align: left;
     align-items: center;
-    width: 620px;
+    width: 650px;
     border: solid grey 1px;
     padding: 16px;
     border-radius: 16px;
@@ -566,6 +588,21 @@ main{
 .avis-titre{
     color: #281423;
     font-weight: 600;
+}
+
+.bouton-coms{
+    background-color: #512B47;
+    padding: 5px 15px 5px 15px;
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
+    border-radius: 32px;
+    transition: transform 0.3s ease;
+}
+
+.bouton-coms:hover{
+    background-color: #154B5F;
+    transform: scale(1.1);
 }
 
 /*chapitres*/
@@ -616,4 +653,47 @@ select {
   }
 
 
+  /*voir les chapitres écrits*/
+  .chapitres-container {
+    margin-top: 20px;
+  }
   
+  .chapitres-container h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+  
+  .chapitres-ecrits {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+    margin-top: 16px;
+    margin-bottom: 16px;
+  }
+  
+  .chapitres-ecrits th,
+  .chapitres-ecrits td {
+    border: 1px solid #ccc;
+    padding: 8px;
+    text-align: left;
+  }
+  
+  .chapitres-ecrits th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+  }
+
+  .button-encours{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 16px;
+  }
+
+  .avis-encours{
+    margin-top: 8px;
+    margin-bottom: 4px;
+    border: solid gainsboro 1px;
+    padding: 10px;
+    border-radius: 9px;
+    box-shadow: 4px 6px 16px 0px rgba(0,0,0,0.3);
+  }

@@ -68,16 +68,15 @@
             </table>
         </div>
 
-        <!-- Formulaire pour créer un avis -->
-        <form action="{{ route('avis.create', ['id' => $histoire->id]) }}" method="GET">
-            <button type="submit" class="btn btn-primary">Poster un avis</button>
-        </form>
+        <div class="button-encours">
+            <!-- Formulaire pour créer un avis -->
+            <form action="{{ route('avis.create', ['id' => $histoire->id]) }}" method="GET">
+                <button type="submit" class="btn btn-primary bouton-coms">Poster un avis</button>
+            </form>
 
-        <!-- Formulaire pour créer un nouveau chapitre -->
-        <form action="{{ route('chapitre.create', ['histoireId' => $histoire->id]) }}" method="GET">
-            <button type="submit" class="btn btn-primary">Ajouter un nouveau chapitre</button>
-        </form>
-
-
-
+            <!-- Formulaire pour créer un nouveau chapitre -->
+            <form action="{{ route('chapitre.create', ['histoireId' => $histoire->id]) }}" method="GET">
+                <button type="submit" class="btn btn-primary bouton-coms">Ajouter un nouveau chapitre</button>
+            </form>
+        </div>
 @endsection
