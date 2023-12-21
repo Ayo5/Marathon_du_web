@@ -46,8 +46,10 @@
                 {{-- Bouton pour créer un nouvel avis --}}
                 <a href="{{ route('avis.create', ['id' => $histoire->id]) }}" class="btn btn-primary">Poster un avis</a>
             </div>
+
             <div>
                 {{-- Bouton pour démarrer la lecture de l'histoire --}}
+
                 <a href="{{ route('chapitre.premier', ['histoire' => $histoire->id]) }}" class="btn btn-primary">Commencer la lecture</a>
             </div>
         </div>
