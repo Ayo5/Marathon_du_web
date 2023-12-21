@@ -1,16 +1,16 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="UTF-8">
-    <title>404</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    @vite(["resources/css/normalize.css", 'resources/css/app.css', 'resources/js/app.js'])
-</head>
-<body>
-<main>
-    <div style="font-size: larger;">Error 404 - SVP, Stylisez moi !!</div>
-</main>
-
-</body>
-</html>
+<x-layout>
+    <main>
+        <img class="imgErreur404" src="{{url('storage/images/error404.svg')}}">
+        <div class="error-message">
+            <p>
+                Error 404 - Page Not Found
+            </p>
+        </div>
+        <div class="error-description">
+            <p>
+                Sorry, the page you are looking for might be in another universe.
+            </p>
+        </div>
+        <a href="/" class="back-to-home">Back to Home</a>
+    </main>
+</x-layout>
