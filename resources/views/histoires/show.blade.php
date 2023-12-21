@@ -1,4 +1,4 @@
- <x-layout>
+<x-layout>
     @if(empty($histoire))
         <h3>L'histoire n'existe pas</h3>
     @else
@@ -22,38 +22,42 @@
                 {{-- le pitch de l'histoire --}}
                 <p><strong>Pitch : </strong><br/>{{ $histoire->pitch }}</p>
             </div>
-            
+
             <div class="lecture-book">
                 {{-- Bouton pour démarrer la lecture de l'histoire --}}
-
                 <a href="{{ route('chapitre.premier', ['histoire' => $histoire->id]) }}" class="btn btn-primary histoires-link">Commencer la lecture</a>
             </div>
 
-            <div  class="avis-histoires">
+            <div class="avis-histoires">
                 {{-- Avis de l'histoire --}}
                 <p><strong>Avis :</strong></p>
                 @forelse($avis as $avisDeHistoire)
                     <p> {{$avisDeHistoire->user->name}} : {{ $avisDeHistoire->contenu }}</p>
-                    @if(auth()->id() == $avisDeHistoire->user_id)
-                        <div class="modif-com">
-                            <form action="{{ route('avis.edit', ['id' => $avisDeHistoire->id]) }}" method="GET" style="display: inline;">
-                                <button type="submit" class="btn btn-warning histoires-link">Modifier</button>
-                            </form>
-                            <form action="{{ route('avis.destroy', ['id' => $avisDeHistoire->id]) }}" method="POST" style="display: inline;">
-                                @csrf
-                                @method('DELETE')
-                                <button type="submit" class="btn btn-danger histoires-link">Supprimer</button>
-                            </form>
-                        </div>
-                    @endif
+                    @auth
+                        @if(auth()->id() == $avisDeHistoire->user_id)
+                            <div class="modif-com">
+                                <form action="{{ route('avis.edit', ['id' => $avisDeHistoire->id]) }}" method="GET" style="display: inline;">
+                                    <button type="submit" class="btn btn-warning histoires-link">Modifier</button>
+                                </form>
+                                <form action="{{ route('avis.destroy', ['id' => $avisDeHistoire->id]) }}" method="POST" style="display: inline;">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit" class="btn btn-danger histoires-link">Supprimer</button>
+                                </form>
+                            </div>
+                        @endif
+                    @endauth
                 @empty
                     <p>Aucun avis pour cette histoire.</p>
                 @endforelse
             </div>
-            <div class="lecture-book">
-                {{-- Bouton pour créer un nouvel avis --}}
-                <a href="{{ route('avis.create', ['id' => $histoire->id]) }}" class="btn btn-primary histoires-link">Poster un avis</a>
-            </div>
+
+            @auth
+                <div class="lecture-book">
+                    {{-- Bouton pour créer un nouvel avis --}}
+                    <a href="{{ route('avis.create', ['id' => $histoire->id]) }}" class="btn btn-primary histoires-link">Poster un avis</a>
+                </div>
+            @endauth
 
             <div>
                 {{-- Bouton pour démarrer la lecture de l'histoire --}}
@@ -61,16 +65,20 @@
             </div>
 
             <div>
-                {{-- Bouton pour démarrer la lecture de l'histoire --}}
-                <a href="{{ route('chapitre.create', ['histoireId' => $histoire->id]) }}" class="btn btn-primary">Ajouter un nouveau chapitre</a>
+                {{-- Bouton pour ajouter un nouveau chapitre --}}
+                @auth
+                    <a href="{{ route('chapitre.create', ['histoireId' => $histoire->id]) }}" class="btn btn-primary">Ajouter un nouveau chapitre</a>
+                @endauth
             </div>
 
             <div>
                 {{-- Bouton pour activer l'histoire --}}
-                <form action="{{ route('histoires.activer', ['id' => $histoire->id]) }}" method="post">
-                    @csrf
-                    <button type="submit" class="btn btn-success">Activer l'histoire</button>
-                </form>
+                @auth
+                    <form action="{{ route('histoires.activer', ['id' => $histoire->id]) }}" method="post">
+                        @csrf
+                        <button type="submit" class="btn btn-success">Activer l'histoire</button>
+                    </form>
+                @endauth
             </div>
         </div>
     @endif
