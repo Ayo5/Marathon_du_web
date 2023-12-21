@@ -4,12 +4,12 @@
             <p>The Lucky Seven Company</p>
         </div>
         <div>
-            160 allée du pass plopsa<br/>
+            160 allée du beau bouquin<br/>
             14652, La tuile
         </div>
         <div>
             mail : luckyseven.contact@gmail.com<br/>
-            Tel: 03 22 2 2 2 2 2 2</p>
+            Tel: 03 27 59 43 26</p>
         </div>
     </div>
     <div class="footer-middle">

@@ -132,6 +132,10 @@ main{
     box-shadow: 3px 9px 15px -3px rgba(0,0,0,0.4);
 }
 
+.show-histoire{
+    background-color: #65B9BD;
+}
+
 #pitch{
     color: white;
     font-size: 16px;
@@ -154,6 +158,58 @@ main{
 
 .histoires-link:hover{
     background-color: #154B5F;
+}
+
+.story-title{
+    font-size: 48px;
+    font-weight: 600;
+}
+
+.story-pic{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 16px 0 16px 0;
+}
+
+.story-pic img{
+    width: 700px;
+    border-radius: 16px;
+}
+
+.story-pitch{
+    font-size: 32px;
+    text-align: center;
+    margin-bottom: 16px;
+}
+
+.story-pitch strong{
+    color: black;
+}
+
+.lecture-book{
+    margin-bottom: 32px;
+    margin-top: 32px;
+}
+
+.avis-histoires{
+    width: 800px;
+    display: flex;
+    flex-direction: column;
+    padding: auto;
+    margin: auto;
+    text-align: left;
+}
+
+.modif-com{
+    margin-top: 8px;
+    margin-bottom: 16px;
+}
+
+.form-com{
+    display: flex;
+    flex-direction: column;
+    font-size: 16px;
 }
 
 /* CSS pour le formulaire */
@@ -201,6 +257,29 @@ main{
 .wrap {
     max-width: 400px;
     margin: 20px auto;
+    text-align: center;
+}
+
+.wrap img{
+    width: 96px;
+}
+
+.affichage-avatar{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin-top: 5%;
+}
+
+.avatars{
+    display: flex;
+    flex-direction: column;
+    border: solid black 1px;
+    border-radius: 9px;
+    padding: 16px;
+    width: 33%;
+    margin-left: 2%;
+    margin-right: 2%;
 }
 
 .login-form {
@@ -424,4 +503,50 @@ main{
     border: solid #281423 1px;
     text-decoration: none;
     color: white;
+}
+
+/*page profile*/
+
+.titre{
+    font-size: 16px;
+    font-weight: 600;
+    color: #281423;
+}
+
+.pitch{
+    text-align: center;
+    color: white;
+    font-weight: 400;
+}
+
+.intro-profile{
+    display: flex;
+    text-align: left;
+    align-items: center;
+    width: 620px;
+    border: solid grey 1px;
+    padding: 16px;
+    border-radius: 16px;
+    margin-bottom: 16px;
+}
+
+.intro-profile img{
+    width: 200px;
+}
+
+.intro-profile p{
+    font-size: 32px;
+}
+
+.avis-profile{
+    background-color: #f3ebeb;
+    margin: 0 0 16px 0;
+    border: solid black 1px;
+    border-radius: 9px;
+    padding: 12px;
+}
+
+.avis-titre{
+    color: #281423;
+    font-weight: 600;
 }
