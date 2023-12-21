@@ -2,7 +2,7 @@
     font-family: "Rounded_Elegance";
     src:
             local("Rounded_Elegance");
-    src: url("../fonts/Rounded_Elegance.ttf") format('truetype');
+    src: url("/resources/fonts/Rounded_Elegance.ttf") format('truetype');
 }
 
 
