@@ -60,4 +60,4 @@ Route::get('/histoire/encours/{id}', [HistoireController::class, 'encours'])->na
 Route::get('/chapitre/{chapitreId}/suite-form', [ChapitreController::class, 'showSuiteForm'])->name('chapitre.showSuiteForm');
 Route::post('/chapitre/store-suite', [ChapitreController::class, 'storeSuite'])->name('chapitre.storeSuite');
 
-Route::post('histoire/{id}/activer', [HistoireController::class, 'activer'])->name('histoires.activer');
+Route::post('/histoire/{id}/activer', [HistoireController::class, 'activer'])->name('histoires.activer');
