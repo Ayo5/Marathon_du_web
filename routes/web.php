@@ -45,7 +45,7 @@ Route::get('/histoires/{histoire}/chapitre/{id}', [ChapitreController::class, 's
 Route::get('/histoires/{histoireId}/create', [ChapitreController::class, 'create'])->name('chapitre.create');
 Route::post('/histoires/{histoire}/chapitre', [ChapitreController::class, 'store'])->name('chapitre.store');
 
-Route::get('/histoires/{id}/comment/create', [AvisController::class, 'create'])->name('avis.create');
+Route::get('/histoire/{id}/comment/create', [AvisController::class, 'create'])->name('avis.create');
 Route::post('/avis/store', [AvisController::class, 'store'])->name('avis.store');
 Route::delete('/avis/{id}', [AvisController::class, 'destroy'])->name('avis.destroy');
 Route::get('/avis/{id}/edit', [AvisController::class, 'edit'])->name('avis.edit');
@@ -56,3 +56,5 @@ Route::get('/histoires/create', [HistoireController::class, 'create'])->name('hi
 Route::post('/histoires/store', [HistoireController::class, 'store'])->name('histoires.store');
 Route::get('/histoires/encours/{id}', [HistoireController::class, 'encours'])->name('histoires.encours');
 
+Route::get('/chapitre/{chapitreId}/suite-form', [ChapitreController::class, 'showSuiteForm'])->name('chapitre.showSuiteForm');
+Route::post('/chapitre/store-suite', [ChapitreController::class, 'storeSuite'])->name('chapitre.storeSuite');

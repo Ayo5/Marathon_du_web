@@ -15,7 +15,7 @@ return new class extends Migration
         Schema::create('chapitres', function (Blueprint $table) {
             $table->id();
             $table->string('titre')->nullable();
-            $table->string('titrecourt');
+            $table->string('titrecourt')->nullable();
             $table->text('texte');
             $table->string('media')->nullable();
             $table->string('question')->nullable();

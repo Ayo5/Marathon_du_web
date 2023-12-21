@@ -17,16 +17,18 @@
             <div>
                 <p><strong>Titre Court : </strong>{{ $chapitre->titrecourt }}</p>
             </div>
-            <p><strong>Texte : </strong>{{ $chapitre->texte }}</p>
+            <p class="texte-chap"><strong>Texte : </strong>{{ $chapitre->texte }}</p>
             <div>
                 {{-- la photo de l'histoire --}}
-                <p><strong>Media : </strong><img src="{{ asset($chapitre->media) }}" alt="Media du Chapitre"></td></p>
+                <p><strong>Media : </strong><img src="{{ asset($chapitre->media) }}" alt="Media du Chapitre"></p>
             </div>
-            {{ $chapitre->question }}
+            {{ $chapitre->question }}<br/>
 
-            @foreach($chapitre->suivants as $suivant)
-                <a href="{{route('chapitre.show',[$chapitre->histoire_id, $suivant->id])}}">{{$suivant->pivot->reponse}} </a>
-            @endforeach
+            <div class="reponse-chap">
+                @foreach($chapitre->suivants as $suivant)
+                    <a href="{{route('chapitre.show',[$chapitre->histoire_id, $suivant->id])}}" class="histoires-link">{{$suivant->pivot->reponse}} </a><br/>
+                @endforeach
+            </div>
 
         </div>
 

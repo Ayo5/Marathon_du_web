@@ -1,4 +1,4 @@
-<x-layout>
+ <x-layout>
     @if(empty($histoire))
         <h3>L'histoire n'existe pas</h3>
     @else
@@ -33,7 +33,7 @@
                 {{-- Avis de l'histoire --}}
                 <p><strong>Avis :</strong></p>
                 @forelse($avis as $avisDeHistoire)
-                    <p> {{$avisDeHistoire->user_id}} : {{ $avisDeHistoire->contenu }}</p>
+                    <p> {{$avisDeHistoire->user->name}} : {{ $avisDeHistoire->contenu }}</p>
                     @if(auth()->id() == $avisDeHistoire->user_id)
                         <div class="modif-com">
                             <form action="{{ route('avis.edit', ['id' => $avisDeHistoire->id]) }}" method="GET" style="display: inline;">

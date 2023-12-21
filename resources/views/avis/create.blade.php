@@ -5,10 +5,8 @@
             @csrf
             <input type="hidden" name="histoire_id" value="{{ $histoire->id }}">
             <input type="hidden" name="user_id" value="{{ auth()->id()}}">
-            <div class="photo">
-                <img src="{{url('storage/images/' . Auth::user()->avatar_link .'.png')}}">
-            </div>
-            <div class="form-group form-com">
+            <div class="form-com">
+                <img src="{{url('storage/images/' . Auth::user()->avatar_link .'.png')}}" class="avatars-com">
                 <label for="text">Commentaire :</label>
                 <textarea name="contenu" id="contenu" rows="6" class="form-control" required></textarea>
             </div>
