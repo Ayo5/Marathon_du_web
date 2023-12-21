@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Avis;
+use App\Models\Chapitre;
 use App\Models\Genre;
 use App\Models\Histoire;
 use Illuminate\Http\Request;
@@ -86,7 +87,8 @@ class HistoireController extends Controller
     public function show(int $id): View {
         $histoire = Histoire::find($id);
         $avis =Avis::where('histoire_id', $id)->get();
-        return view('histoires.show', ['histoire' => $histoire, 'avis'=>$avis]);
+        $chapitres = Chapitre::where('histoire_id', $id)->get();
+        return view('histoires.show', ['histoire' => $histoire, 'avis'=>$avis , 'chapitres' => $chapitres]);
     }
      public function apropos() {
           return view('home.apropos', ['titre'=>'A propos']);

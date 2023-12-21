@@ -13,12 +13,15 @@ class ChapitreController extends Controller
         $chapitre = Chapitre::where('histoire_id', $histoireId)->orderBy('id', 'asc')->first();
         return view('chapitre.show', ['chapitre' => $chapitre]);
     }
-    public function show(int $id) {
-        $histoire = Histoire::find($id);
-        $chapitre = Chapitre::where('histoire_id', $id)->get()->first();
+    public function show(int $histoireId, int $id) {
+        $chapitre = Chapitre::find($id);
 
-        return view('chapitre.show', ['chapitre' => $chapitre, 'histoire' => $histoire]);
+        return view('chapitre.show', [
+            'chapitre' => $chapitre
+        ]);
     }
+
+
 
 
 }
