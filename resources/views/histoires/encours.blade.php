@@ -79,7 +79,7 @@
         </form>
 
         <!-- Formulaire pour créer une liasons -->
-        <form action="{{ route('chapitre.showSuiteForm', ['chapitreId' => $chapitre->id] ) }}" method="GET">
+        <form action="{{ route('chapitre.showSuiteForm' ) }}" method="GET">
             <button type="submit" class="btn btn-primary">Créer une liason</button>
         </form>
 

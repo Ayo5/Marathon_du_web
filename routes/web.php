@@ -53,9 +53,9 @@ Route::get('/avis/{id}/edit', [AvisController::class, 'edit'])->name('avis.edit'
 Route::put('/avis/{id}', [AvisController::class, 'update'])->name('avis.update');
 
 
-Route::get('/histoires/create', [HistoireController::class, 'create'])->name('histoires.create');
-Route::post('/histoires/store', [HistoireController::class, 'store'])->name('histoires.store');
-Route::get('/histoires/encours/{id}', [HistoireController::class, 'encours'])->name('histoires.encours');
+Route::get('/histoire/create', [HistoireController::class, 'create'])->name('histoires.create');
+Route::post('/histoire/store', [HistoireController::class, 'store'])->name('histoires.store');
+Route::get('/histoire/encours/{id}', [HistoireController::class, 'encours'])->name('histoires.encours');
 
 Route::get('/chapitre/{chapitreId}/suite-form', [ChapitreController::class, 'showSuiteForm'])->name('chapitre.showSuiteForm');
 Route::post('/chapitre/store-suite', [ChapitreController::class, 'storeSuite'])->name('chapitre.storeSuite');
