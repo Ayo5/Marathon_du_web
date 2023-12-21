@@ -20,7 +20,7 @@ return new class extends Migration
             $table->string('media')->nullable();
             $table->string('question')->nullable();
             $table->foreignIdFor(Histoire::class);
-            $table->boolean('premier');
+            $table->boolean('premier')->default(false);
         });
     }
 
