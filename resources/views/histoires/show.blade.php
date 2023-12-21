@@ -46,8 +46,20 @@
                 {{-- Bouton pour créer un nouvel avis --}}
                 <a href="{{ route('avis.create', ['id' => $histoire->id]) }}" class="btn btn-primary">Poster un avis</a>
             </div>
+            @if(!empty($chapitres))
+                <div>
+                    <p><strong>Chapitres :</strong></p>
+                    @foreach($chapitres as $chapitre)
+                        <div>
+                            <a href="{{ route('chapitre.show', ['id' => $chapitre->id]) }}">{{ $chapitre->titrecourt }}</a>
+                        </div>
+                    @endforeach
+                </div>
+            @endif
+
             <div>
                 {{-- Bouton pour démarrer la lecture de l'histoire --}}
+
                 <a href="{{ route('chapitre.premier', ['histoire' => $histoire->id]) }}" class="btn btn-primary">Commencer la lecture</a>
             </div>
         </div>
