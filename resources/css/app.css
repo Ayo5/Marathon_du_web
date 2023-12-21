@@ -27,18 +27,21 @@ header{
     background-color: #512B47;
     padding: 1em;
     border-radius: 90px;
-    margin-left: 0.5em;
-    margin-right: 0.5em;
     border: solid #281423 1px;
+    text-decoration: none;
+    color: white;
+    margin-bottom: 16px;
 }
 
-/*.header-story:hover{ 
-    background-color: ;
-}*/
+.header-story:hover{ 
+    background-color: #ebbdec;
+}
 
 .header-logo{
     display: flex;
     align-items: center;
+    width: 20%;
+    margin-right: 20%;
 }
 
 header a{
@@ -50,17 +53,41 @@ header a{
     justify-content: space-around;
 }
 
+.logo-login{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 32px;
+}
+
+.welcome-login{
+    margin-top: 16px;
+    text-align: center;
+    margin-bottom: 32px;
+    font-size: 24px;
+}
 
 .footer{
     background-color: #154B5F;
     color: white;
-    padding: 20px;
+    padding: 15px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    font-size: 16px;
+}
+
+.footer-left div{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.footer-middle{
+    font-size: 32px;
 }
 
 .footer-right{
+    padding-top: 3%;
     text-align: end;
 }
 
@@ -76,6 +103,58 @@ main{
     margin-right: auto;
 }
 
+
+/*CSS pour l'affichage global des livres*/
+.choix-histoires{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.green{
+    background-color: #66BB8D;
+}
+
+.blue{
+    background-color: #65B9BD;
+}
+
+.histoires-total {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-content: center;
+    align-items: center;
+    width: 340px;
+    height: 500px;
+    padding: 20px;
+    margin-bottom: 50px;
+    border-radius: 8px;
+    box-shadow: 3px 9px 15px -3px rgba(0,0,0,0.4);
+}
+
+#pitch{
+    color: white;
+    font-size: 16px;
+    font-weight: 500;
+    text-align: center;
+}
+
+.histoires-total img{
+    width: 180px;
+}
+
+.histoires-link{
+    background-color: #512B47;
+    padding: 20px 50px 20px 50px;
+    text-decoration: none;
+    color: white;
+    font-weight: 600;
+    border-radius: 32px;
+}
+
+.histoires-link:hover{
+    background-color: #154B5F;
+}
 
 /* CSS pour le formulaire */
 /* Styles spécifiques au formulaire de contact */
@@ -116,9 +195,6 @@ main{
 .contact-form button:hover {
     background-color: #45a049;
 }
-
-
-
 
 /*CSS pour le formulaire d'enregistrement*/
 /* Styles spécifiques au formulaire de connexion */
@@ -308,4 +384,44 @@ main{
     margin-bottom: 10px;
     width: 400px;
     height: auto;
+}
+
+/*Page de l'équipe*/
+
+.equipe{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.equipe img{
+    width: 100px;
+    margin-bottom: 16px;
+}
+
+.grid-equipe{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.equipe-membre{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    background-color: #f3ebeb;
+    border: solid black 1px;
+    border-radius: 9px;
+    padding: 16px;
+    margin: 16px;
+}
+
+/*bouton accés profil*/
+.bouton-profile{
+    background-color: #512B47;
+    padding: 1em;
+    border-radius: 90px;
+    border: solid #281423 1px;
+    text-decoration: none;
+    color: white;
 }
