@@ -20,9 +20,9 @@ use App\Http\Controllers\EquipeController;
 */
 
 Route::get('/', [HistoireController::class, 'index'])->name('index');;
-Route::get('/histoires/{id}', [HistoireController::class, 'show'])->name('histoires.show');
-Route::get('/histoires/{id}/chapitre/first', [ChapitreController::class, 'show'])->name('chapitre.show');
-Route::get('/histoires/{id}/chapitre/next', [ChapitreController::class, 'show'])->name('chapitre.showNext');
+Route::get('/histoire/{id}', [HistoireController::class, 'show'])->name('histoires.show');
+Route::get('/histoire/{id}/chapitre/first', [ChapitreController::class, 'show'])->name('chapitre.show');
+Route::get('/histoire/{id}/chapitre/next', [ChapitreController::class, 'show'])->name('chapitre.showNext');
 
 Route::get('/contact', function () {
     return view('contact');
@@ -40,10 +40,11 @@ Route::get('/home', function () {
 Route::get('/user/{idCurr}', [UserController::class, 'index'])->name('user.index')->middleware(['auth']);
 
 
-Route::get('/histoires/{histoire}/chapitre/premier', [ChapitreController::class, 'premier'])->name('chapitre.premier');
-Route::get('/histoires/{histoire}/chapitre/{id}', [ChapitreController::class, 'show'])->name('chapitre.show');
-Route::get('/histoires/{histoireId}/create', [ChapitreController::class, 'create'])->name('chapitre.create');
-Route::post('/histoires/{histoire}/chapitre', [ChapitreController::class, 'store'])->name('chapitre.store');
+Route::get('/histoire/{histoire}/chapitre/premier', [ChapitreController::class, 'premier'])->name('chapitre.premier');
+Route::get('/histoire/{histoire}/chapitre/{id}', [ChapitreController::class, 'show'])->name('chapitre.show');
+Route::get('/histoire/{histoireId}/create', [ChapitreController::class, 'create'])->name('chapitre.create');
+Route::post('/histoire/{histoire}/chapitre', [ChapitreController::class, 'store'])->name('chapitre.store');
+
 
 Route::get('/histoire/{id}/comment/create', [AvisController::class, 'create'])->name('avis.create');
 Route::post('/avis/store', [AvisController::class, 'store'])->name('avis.store');
