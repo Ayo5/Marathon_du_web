@@ -10,7 +10,14 @@ class Avis extends Model
     use HasFactory;
     protected $table = "avis";
 
-        public function user() {
+    protected $fillable = [
+        'contenu',
+        'user_id',
+        'histoire_id',
+    ];
+
+
+    public function user() {
         return $this->belongsTo(User::class);
     }
     

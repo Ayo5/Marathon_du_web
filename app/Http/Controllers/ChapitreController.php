@@ -3,23 +3,23 @@
 namespace App\Http\Controllers;
 
 use App\Models\Chapitre;
-use App\Models\Comment;
 use App\Models\Histoire;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class ChapitreController extends Controller
 {
-
     public function premier($histoireId)
     {
         $chapitre = Chapitre::where('histoire_id', $histoireId)->orderBy('id', 'asc')->first();
         return view('chapitre.show', ['chapitre' => $chapitre]);
     }
-    public function show(int $id) {
-        $histoire = Histoire::find($id);
-        $chapitre = Chapitre::where('histoire_id', $id)->get()->first();
+    public function show(int $histoireId, int $id) {
+        $chapitre = Chapitre::find($id);
 
-        return view('chapitre.show', ['chapitre' => $chapitre, 'histoire' => $histoire]);
+        return view('chapitre.show', [
+            'chapitre' => $chapitre
+        ]);
     }
 
 //    public function store(Request $request, $histoireId)
@@ -63,5 +63,32 @@ class ChapitreController extends Controller
 
         return redirect()->route('home.show', ['id' => $request->input('histoire_id')])
             ->with('success', 'Chapitre ajouté avec succès');
+    }
+
+    public function showSuiteForm($chapitreId)
+    {
+        $chapitreSource = Chapitre::findOrFail($chapitreId);
+        $chapitresDisponibles = Chapitre::where('id', '!=', $chapitreId)->get();
+
+        return view('chapitre.showSuiteForm', compact('chapitreSource', 'chapitresDisponibles'));
+    }
+
+    public function storeSuite(Request $request)
+    {
+        $request->validate([
+            'chapitre_source_id' => 'required|exists:chapitres,id',
+            'chapitre_destination_id' => 'required|exists:chapitres,id',
+            'reponse' => 'required',
+        ]);
+
+        DB::table('suites')->insert([
+            'chapitre_source_id' => $request->input('chapitre_source_id'),
+            'chapitre_destination_id' => $request->input('chapitre_destination_id'),
+            'reponse' => $request->input('reponse'),
+        ]);
+        $histoire = Chapitre::find($request->input('chapitre_source_id'))->histoire;
+
+        return redirect()->route('chapitre.show', ['histoire'=> $histoire ,'id' => $request->input('chapitre_source_id')])
+            ->with('success', 'Chapitres liés avec succès');
     }
 }

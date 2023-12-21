@@ -21,13 +21,17 @@ class UserFactory extends Factory
      *
      * @return array<string, mixed>
      */
-    public function definition(): array
-    {
+    public function definition(): array {
+        //Faire le rand pour les images
+        $tab = array("Batman", "Femme", "Femme2", "Homme", "Homme2");
+        //Choix aléatoire d'une image
+        $avatarChoisi = $tab[array_rand($tab)];
         return [
             'name' => fake()->name(),
             'email' => fake()->unique()->safeEmail(),
             'email_verified_at' => now(),
             'password' => static::$password ??= Hash::make('password'),
+            'avatar_link' => $avatarChoisi,
             'remember_token' => Str::random(10),
         ];
     }

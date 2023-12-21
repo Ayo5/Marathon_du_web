@@ -2,16 +2,13 @@
     <div>
         <h3>Vous êtes connecté !</h3>
         <!--Ajouter btn pour avoir les infos utilisateurs-->
-        <p>
+        <p style="margin-bottom: 30px";>
             Vous pouvez retrouvez vos informations de base en cliquant
             sur le bouton ci-dessous:
         </p>
 
-        <button>
-            <a href="{{ route('user.index', ['idCurr' => Auth::user()->id]) }}">
+            <a href="{{ route('user.index', ['idCurr' => Auth::user()->id]) }}" class="bouton-profile">
                 Information utilisateur
             </a>
-        </button>
-
     </div>
 </x-layout>

@@ -42,8 +42,8 @@ return [
             'serialize' => false,
         ],
 
-        'database.sqlite' => [
-            'driver' => 'database.sqlite',
+        'database' => [
+            'driver' => 'database',
             'table' => 'cache',
             'connection' => null,
             'lock_connection' => null,
@@ -100,12 +100,12 @@ return [
     | Cache Key Prefix
     |--------------------------------------------------------------------------
     |
-    | When utilizing the APC, database.sqlite, memcached, Redis, or DynamoDB cache
+    | When utilizing the APC, database, memcached, Redis, or DynamoDB cache
     | stores there might be other applications using the same cache. For
     | that reason, you may prefix every cache key to avoid collisions.
     |
     */
 
-    'prefix' => env('CACHE_PREFIX', Str::slug(env('APP_NAME', 'database.sqlite'), '_').'_cache_'),
+    'prefix' => env('CACHE_PREFIX', Str::slug(env('APP_NAME', 'laravel'), '_').'_cache_'),
 
 ];

@@ -5,127 +5,156 @@
 }
 
 body {
-    font-family: Arial, sans-serif;
+    font-family: "Rounded_Elegance", sans-serif;
+    src: url('/fonts/Rounded_Elegance.ttf') format('ttf');
     color: #343a40;
-    height: 100vh;
+    background-color: white;
 }
 
-menu {
-    background: linear-gradient(to bottom, #a792ff, #ffffff); /* Dégradé du mauve au blanc */
+header{
+    padding-top: 2em;
+    padding-bottom: 2em;
+    padding-left: 10%;
+    padding-right: 10%;
+    background-color: #154B5F;
     display: flex;
+    color: white;
+    justify-content: space-between;
     align-items: center;
-    gap: 12px;
-    top: 0;
-    position: sticky;
-    z-index: 1000;
-    padding: 50px 40px;
 }
 
-button {
-    display: inline-block;
-    font-size: 16px;
-    font-weight: bold;
-    background-color: #dfd8fa;
-    border: none;
-    cursor: pointer;
-    color: #fff;
-    padding: 6px 10px;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.7);
-    border-radius: 5px;
-}
-
-h1 {
-    font-size: 50px;
-    margin: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #000000;
-}
-
-
-button:last-child {
-    background-color: #ffc5fc;
-    margin-left: auto;
-}
-
-footer {
-    display: flex;
-    justify-content: center;
-    padding-top: 25px;
-    background-color: #eaeaea;
-    padding-bottom: 25px;
-}
-
-a:link {
-    color: #1098ad;
+.header-story{
+    background-color: #512B47;
+    padding: 1em;
+    border-radius: 90px;
+    border: solid #281423 1px;
     text-decoration: none;
+    color: white;
+    margin-bottom: 16px;
 }
 
-a:visited {
-    color: #1098ad;
+.header-story:hover{ 
+    background-color: #ebbdec;
 }
 
-a:hover {
-    color: orangered;
-    font-weight: bold;
-    text-decoration: underline orangered;
-}
-
-a:active {
-    background-color: black;
-    font-style: italic;
-}
-
-.a-droite {
-    margin-left: auto;
+.header-logo{
     display: flex;
     align-items: center;
-    gap: 12px;
+    width: 20%;
+    margin-right: 20%;
 }
 
-img {
-    width: 350px;
-    height: auto;
+header a{
+    text-decoration: none;
+    color: white;
 }
 
-.divScene {
-    margin-bottom: 20px;
-    text-align: center; /* Center the child elements */
+.a-droite a{
+    justify-content: space-around;
 }
 
-.scene {
-    text-align: center;
-    margin: 5px 5px 5px 5px;
-    min-width: 250px;
-    min-height: 225px;
-    display: inline-block;
-    box-sizing: border-box;
-    margin-right: 10px;
-}
-
-.paraScene {
-    font-weight: bold;
-}
-
-.form {
-    margin-left: 15px;
-}
-
-.center-image {
+.logo-login{
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 10vh;
+    margin-bottom: 32px;
 }
 
-.logo {
-    width: 200px;
-    height: auto;
+.welcome-login{
+    margin-top: 16px;
+    text-align: center;
+    margin-bottom: 32px;
+    font-size: 24px;
+}
+
+.footer{
+    background-color: #154B5F;
+    color: white;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 16px;
+}
+
+.footer-left div{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.footer-middle{
+    font-size: 32px;
+}
+
+.footer-right{
+    padding-top: 3%;
+    text-align: end;
+}
+
+.footer-right a{
+    text-decoration: none;
+    color: white;
+}
+
+main{
+    min-height: 80vh;
+    width: 80%;
+    margin-left: 10%;
+    margin-right: auto;
 }
 
 
+/*CSS pour l'affichage global des livres*/
+.choix-histoires{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
 
+.green{
+    background-color: #66BB8D;
+}
+
+.blue{
+    background-color: #65B9BD;
+}
+
+.histoires-total {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-content: center;
+    align-items: center;
+    width: 340px;
+    height: 500px;
+    padding: 20px;
+    margin-bottom: 50px;
+    border-radius: 8px;
+    box-shadow: 3px 9px 15px -3px rgba(0,0,0,0.4);
+}
+
+#pitch{
+    color: white;
+    font-size: 16px;
+    font-weight: 500;
+    text-align: center;
+}
+
+.histoires-total img{
+    width: 180px;
+}
+
+.histoires-link{
+    background-color: #512B47;
+    padding: 20px 50px 20px 50px;
+    text-decoration: none;
+    color: white;
+    font-weight: 600;
+    border-radius: 32px;
+}
+
+.histoires-link:hover{
+    background-color: #154B5F;
+}
 
 /* CSS pour le formulaire */
 /* Styles spécifiques au formulaire de contact */
@@ -166,9 +195,6 @@ img {
 .contact-form button:hover {
     background-color: #45a049;
 }
-
-
-
 
 /*CSS pour le formulaire d'enregistrement*/
 /* Styles spécifiques au formulaire de connexion */
@@ -300,4 +326,102 @@ img {
 .comment-form .error-messages {
     color: #ff0000;
     margin-bottom: 10px;
+}
+
+
+
+/* Code CSS pour la page 404 */
+.error-container {
+    font-family: 'Arial', sans-serif;
+    background-color: #f8f8f8;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.error-content {
+    text-align: center;
+}
+
+.error-message {
+    font-size: 2em;
+    color: #333;
+}
+
+.error-description {
+    font-size: 1.2em;
+    color: #555;
+    margin-top: 10px;
+}
+
+/* Ajuster la marge du bouton et retirer la marge supérieure */
+.back-to-home {
+    margin-top: 10px; /* Ajuster la marge pour éviter le chevauchement */
+    margin-bottom: 10px;
+    text-decoration: none;
+    padding: 10px 20px;
+    background-color: #ef98ee;
+    color: #fff;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    display: inline-block; /* Ajouter cette propriété pour empêcher le chevauchement */
+}
+
+.back-to-home:hover {
+    background-color: #ebbdec;
+}
+
+.main-container {
+    text-align: center;
+}
+
+.imgErreur404 {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 400px;
+    height: auto;
+}
+
+/*Page de l'équipe*/
+
+.equipe{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.equipe img{
+    width: 100px;
+    margin-bottom: 16px;
+}
+
+.grid-equipe{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.equipe-membre{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    background-color: #f3ebeb;
+    border: solid black 1px;
+    border-radius: 9px;
+    padding: 16px;
+    margin: 16px;
+}
+
+/*bouton accés profil*/
+.bouton-profile{
+    background-color: #512B47;
+    padding: 1em;
+    border-radius: 90px;
+    border: solid #281423 1px;
+    text-decoration: none;
+    color: white;
 }

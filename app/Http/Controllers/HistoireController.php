@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Avis;
+use App\Models\Chapitre;
 use App\Models\Genre;
 use App\Models\Histoire;
 use Illuminate\Http\Request;
@@ -45,10 +46,49 @@ class HistoireController extends Controller
         return view('welcome', ['histoires' => $histoires, 'genres' => $genres, 'cat' => $cat]);
     }
 
+    public function create() {
+        $genres = Genre::all();
+        return view('histoires.create', ['genres' => $genres]);
+    }
+
+    public function encours($id) {
+        $histoire = Histoire::find($id);
+        return view('histoires.encours', ['histoire' => $histoire]);
+    }
+
+
+
+    public function store(Request $request)
+    {
+        $validatedData = $request->validate([
+            'titre' => 'required|string|max:255',
+            'photo' => 'required|string',
+            'pitch' => 'required|string',
+            'genre_id' => 'required|exists:genres,id',
+        ]);
+
+        $active = optional($request->input('active'))->has('active') ? true : false;
+
+
+        $histoire = Histoire::create([
+            'titre' => $validatedData['titre'],
+            'photo' => $validatedData['photo'],
+            'pitch' => $validatedData['pitch'],
+            'genre_id' => $validatedData['genre_id'],
+            'active' => $active,
+            'user_id' => auth()->user()->id,
+
+        ]);
+        return redirect()->route('histoires.encours', ['id' => $histoire->id])
+            ->with('success', 'L\'histoire a été créée avec succès.');
+    }
+
+
     public function show(int $id): View {
         $histoire = Histoire::find($id);
         $avis =Avis::where('histoire_id', $id)->get();
-        return view('histoire.show', ['histoire' => $histoire, 'avis'=>$avis]);
+        $chapitres = Chapitre::where('histoire_id', $id)->get();
+        return view('histoires.show', ['histoire' => $histoire, 'avis'=>$avis , 'chapitres' => $chapitres]);
     }
      public function apropos() {
           return view('home.apropos', ['titre'=>'A propos']);
