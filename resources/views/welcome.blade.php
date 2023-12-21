@@ -1,6 +1,7 @@
     @extends("templates.app")
 
     @section('content')
+    <div class="welcome">
         <div style="text-align: center;">
             <div>
                 <b>Le marathon du WEB 2023 !!!</b>
@@ -37,9 +38,10 @@
                 @endif
                     <b>{{$histoire->titre}}</b>
                     <b id="pitch">{{$histoire->pitch}}</b>
-                    <img src="{{ asset($histoire->photo) }}" alt="Image de l'histoire">
+                    <img src="{{ asset($histoire->photo) }}" alt="Image de l'histoire" style="border-radius: 9px; object-fit:cover">
                     <a href="{{ route('histoires.show', ['id' => $histoire->id]) }}" class="histoires-link">Voir plus</a>
                 </div>
             @endforeach
         </div>
+    </div>
     @endsection

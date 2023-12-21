@@ -37,12 +37,12 @@
                     @if(auth()->id() == $avisDeHistoire->user_id)
                         <div class="modif-com">
                             <form action="{{ route('avis.edit', ['id' => $avisDeHistoire->id]) }}" method="GET" style="display: inline;">
-                                <button type="submit" class="btn btn-warning histoires-link">Modifier</button>
+                                <button type="submit" class="btn btn-warning bouton-coms">Modifier</button>
                             </form>
                             <form action="{{ route('avis.destroy', ['id' => $avisDeHistoire->id]) }}" method="POST" style="display: inline;">
                                 @csrf
                                 @method('DELETE')
-                                <button type="submit" class="btn btn-danger histoires-link">Supprimer</button>
+                                <button type="submit" class="btn btn-danger bouton-coms">Supprimer</button>
                             </form>
                         </div>
                     @endif
@@ -54,12 +54,6 @@
                 {{-- Bouton pour créer un nouvel avis --}}
                 <a href="{{ route('avis.create', ['id' => $histoire->id]) }}" class="btn btn-primary histoires-link">Poster un avis</a>
             </div>
-
-            <div>
-                {{-- Bouton pour démarrer la lecture de l'histoire --}}
-                <a href="{{ route('chapitre.premier', ['histoire' => $histoire->id]) }}" class="btn btn-primary">Commencer la lecture</a>
-            </div>
-
             <div>
                 {{-- Bouton pour démarrer la lecture de l'histoire --}}
                 <a href="{{ route('chapitre.create', ['histoireId' => $histoire->id]) }}" class="btn btn-primary">Ajouter un nouveau chapitre</a>
