@@ -17,8 +17,8 @@ class AvisController extends Controller
 
     public function edit(int $id)
     {
-        $comment = Avis::find($id);
-        return view('avis.edit', ['comment' => $comment]);
+        $avis = Avis::find($id);
+        return view('avis.edit', ['avis' => $avis]);
     }
 
     public function store(Request $request)
@@ -35,39 +35,39 @@ class AvisController extends Controller
             'histoire_id' => $request->input('histoire_id'),
         ]);
 
-        return redirect()->route('histoire.show', ['id' => $request->input('histoire_id')])
+        return redirect()->route('histoires.show', ['id' => $request->input('histoire_id')])
             ->with('success', 'Commentaire ajouté avec succès');
     }
 
     public function update(Request $request, int $id)
     {
-        $comment = Avis::find($id);
+        $avis = Avis::find($id);
 
         $this->validate($request, [
-            'title' => 'required|max:255',
-            'text' => 'required',
+            'contenu' => 'required',
         ]);
 
-        $comment->title = $request->title;
-        $comment->text = $request->text;
+        $avis->contenu = $request->contenu;
 
-        $comment->save();
 
-        return redirect()->route('histoire.show', ['id' => $comment->histoire_id])
+        $avis->save();
+
+        return redirect()->route('histoires.show', ['id' => $avis->histoire_id])
             ->with('success', 'Commentaire mis à jour avec succès');
     }
 
     public function destroy(Request $request, int $id)
     {
         $avis = Avis::find($id);
+
         $histoireId = $avis->histoire_id;
         $avis->delete();
 
         if ($request->delete == 'valide') {
-            return redirect()->route('histoire.show', ['id' => $histoireId])
+            return redirect()->route('histoires.show', ['id' => $histoireId])
                 ->with('success', 'Commentaire supprimé avec succès');
         }
 
-        return redirect()->route('histoire.show', ['id' => $histoireId])->with('error', 'Suppression annulée');
+        return redirect()->route('histoires.show', ['id' => $histoireId])->with('error', 'Suppression annulée');
     }
 }

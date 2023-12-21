@@ -27,6 +27,17 @@
                 <p><strong>Avis :</strong></p>
                 @forelse($avis as $avisDeHistoire)
                     <p> {{$avisDeHistoire->user_id}} : {{ $avisDeHistoire->contenu }}</p>
+                    @if(auth()->id() == $avisDeHistoire->user_id)
+                        <form action="{{ route('avis.edit', ['id' => $avisDeHistoire->id]) }}" method="GET" style="display: inline;">
+                            <button type="submit" class="btn btn-warning">Modifier</button>
+                        </form>
+                        <form action="{{ route('avis.destroy', ['id' => $avisDeHistoire->id]) }}" method="POST" style="display: inline;">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit" class="btn btn-danger">Supprimer</button>
+                        </form>
+
+                    @endif
                 @empty
                     <p>Aucun avis pour cette histoire.</p>
                 @endforelse

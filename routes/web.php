@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AvisController;
 use App\Http\Controllers\ChapitreController;
 use App\Http\Controllers\HistoireController;
 use App\Http\Controllers\UserController;
@@ -19,7 +20,7 @@ use App\Http\Controllers\EquipeController;
 */
 
 Route::get('/', [HistoireController::class, 'index'])->name('index');;
-Route::get('/histoire/{id}', [HistoireController::class, 'show'])->name('histoire.show');
+Route::get('/histoire/{id}', [HistoireController::class, 'show'])->name('histoires.show');
 Route::get('/histoire/{id}/chapitre/first', [ChapitreController::class, 'show'])->name('chapitre.show');
 Route::get('/histoire/{id}/chapitre/next', [ChapitreController::class, 'show'])->name('chapitre.showNext');
 
@@ -47,10 +48,6 @@ Route::post('/avis/store', [AvisController::class, 'store'])->name('avis.store')
 Route::delete('/avis/{id}', [AvisController::class, 'destroy'])->name('avis.destroy');
 Route::get('/avis/{id}/edit', [AvisController::class, 'edit'])->name('avis.edit');
 Route::put('/avis/{id}', [AvisController::class, 'update'])->name('avis.update');
-
-
-Route::get('/show', [HistoireController::class, 'index'])->name("histoires.show");
-
 
 
 Route::get('/histoires/create', [HistoireController::class, 'create'])->name('histoires.create');
