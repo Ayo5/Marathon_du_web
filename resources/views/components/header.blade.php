@@ -1,5 +1,5 @@
 <header class="main-header">
-    <a href="{{route('index')}}" class="header-logo"><img src="/images/logo_reddrasil_blanc.png" style="max-width: 30%;" >Readdrasil</a>
+    <a href="{{route('index')}}" class="header-logo"><img src="{{url('storage/images/logo reddrasil blanc.png')}}" style="max-width: 30%;" >Readdrasil</a>
     <a href="{{route('equipes')}}">Équipe</a>
     <a href="{{route('test-vite')}}">A propos</a>
     <a href="{{route('contact')}}">Contact</a>
