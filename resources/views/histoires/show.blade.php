@@ -62,7 +62,7 @@
 
             <div>
                 {{-- Bouton pour démarrer la lecture de l'histoire --}}
-                <a href="{{ route('chapitre.create', ['histoire' => $histoire->id]) }}" class="btn btn-primary">Ajouter un nouveau chapitre</a>
+                <a href="{{ route('chapitre.create', ['histoireId' => $histoire->id]) }}" class="btn btn-primary">Ajouter un nouveau chapitre</a>
             </div>
         </div>
     @endif
