@@ -11,7 +11,7 @@
             @auth
                 <h3>Bienvenue, {{Auth::user()->name}}</h3>
                 <div class="logo-login">
-                    <img src="/images/logo_reddrasil.png">
+                    <img src="{{url('storage/images/logo reddrasil.png')}}">
                     <h2 style="color: #66BB8D;">Read</h2><h2 style="color: #65B9BD;">drasil</h2>
                 </div>
                 <a href="{{route('histoires.create')}}" class="header-story">Nouvelle Histoire</a>

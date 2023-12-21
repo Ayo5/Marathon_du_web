@@ -29,7 +29,7 @@
             {{-- Avis de l'histoire --}}
             <p><strong>Avis :</strong></p>
             @forelse($avis as $avisDeHistoire)
-                <p> {{$avisDeHistoire->user_id}} : {{ $avisDeHistoire->contenu }}</p>
+                <p> {{$avisDeHistoire->user->name}} : {{ $avisDeHistoire->contenu }}</p>
                 @if(auth()->id() == $avisDeHistoire->user_id)
                     <form action="{{ route('avis.edit', ['id' => $avisDeHistoire->id]) }}" method="GET" style="display: inline;">
                         <button type="submit" class="btn btn-warning">Modifier</button>
