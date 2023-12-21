@@ -2,7 +2,6 @@
 
 use App\Http\Controllers\ChapitreController;
 use App\Http\Controllers\HistoireController;
-use App\Http\Controllers\HomeController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\EquipeController;
@@ -41,4 +40,4 @@ Route::get('/user/{idCurr}', [UserController::class, 'index'])->name('user.index
 
 
 Route::get('/histoire/{histoire}/chapitre/premier', [ChapitreController::class, 'premier'])->name('chapitre.premier');
-//Route::post('/histoire/{histoire}/chapitre/create', [ChapitreController::class, 'store'])->name('chapitre.store');
+Route::get('/histoire/{histoire}/create', [ChapitreController::class, 'store'])->name('chapitre.create');
