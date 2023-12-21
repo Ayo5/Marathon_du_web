@@ -51,12 +51,16 @@ class HistoireController extends Controller
         return view('histoires.create', ['genres' => $genres]);
     }
 
-    public function encours($id) {
+// HistoireController.php
+
+    public function encours($id)
+    {
         $histoire = Histoire::find($id);
-        return view('histoires.encours', ['histoire' => $histoire]);
+        $chapitres = $histoire->chapitres;
+        $avis = $histoire->avis; // Assure-toi que ta relation est correctement définie dans le modèle Histoire
+
+        return view('histoires.encours', compact('histoire', 'chapitres', 'avis'));
     }
-
-
 
     public function store(Request $request)
     {
@@ -97,4 +101,7 @@ class HistoireController extends Controller
      public function contact() {
           return view('home.contact', ['titre'=>'Contact']);
      }
+
+
+
 }

@@ -15,6 +15,7 @@ class Chapitre extends Model {
         'titrecourt',
         'histoire_id',
         'premier',
+        'question'
     ];
 
     public function histoire() {
