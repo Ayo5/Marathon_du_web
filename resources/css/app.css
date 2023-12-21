@@ -567,3 +567,53 @@ main{
     color: #281423;
     font-weight: 600;
 }
+
+/*chapitres*/
+
+.reponse-chap{
+    display: flex;
+    justify-content: center;
+}
+
+.reponse-chap a{
+    margin-left: 16px;
+    margin-right: 16px;
+    margin-top: 12px;
+    margin-bottom: 16px;
+}
+
+.img-chap{
+    min-width: 500px;
+    max-width: 700px;
+}
+
+.texte-chap{
+    margin-top: 16px;
+    margin-bottom: 16px;
+}
+
+/*select genre histoire*/
+select {
+    margin-top: 16px;
+    padding: 8px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    width: 200px; /* Ajustez la largeur selon vos besoins */
+  }
+  
+  /* Style pour les options du select */
+  select option {
+    font-size: 14px;
+    background-color: #fff;
+    color: #333;
+  }
+  
+  /* Style pour l'option par défaut sélectionnée */
+  select option[value="All"] {
+    font-style: italic;
+    color: #999;
+  }
+
+
+  
