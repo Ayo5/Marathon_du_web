@@ -25,6 +25,9 @@
         <label for="texte">Contenu du Chapitre</label>
         <input type="text" name="texte" rows="5" required>
 
+        <label for="question">Question</label>
+        <input type="text" name="question" rows="5" required>
+
         <label for="premier">Premier</label>
         <input type="checkbox" name="premier" value="1">
 

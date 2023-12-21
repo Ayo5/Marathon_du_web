@@ -18,7 +18,7 @@
             @endauth
         </div>
 
-        <form class="form" action="{{ route('index') }}" method="get" style="text-align: center; margin-bottom: 20px;">
+        <form class="form selec-genre" action="{{ route('index') }}" method="get" style="text-align: center; margin-bottom: 20px;">
             <label for="cat">Sélectionner un genre :</label>
             <select name="cat" id="cat" onchange="this.form.submit()">
                 <option value="All" @if($cat == 'All') selected @endif>-- Touts les Genres --</option>

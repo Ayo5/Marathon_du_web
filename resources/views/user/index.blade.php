@@ -4,20 +4,30 @@
         <div class="divScene">
 
                 <div>
-                    <img src="{{url('storage/images/'.$user->avatar_link.'.png')}}">
-                    <p>Nom: {{$user->name}}</p>
-                    <p>E-mail: {{$user->email}}</p>
+                    <div class="intro-profile">
+                        <img src="{{url('storage/images/'.$user->avatar_link.'.png')}}">
+                        <div>
+                            <p>Nom: {{$user->name}}</p>
+                            <p>E-mail: {{$user->email}}</p>
+                        </div>
+                    </div>
                     <p>Nombre d'œuvres lues: {{$nombreOeuvresTerminees}}</p>
-                    @foreach($terminees as $t)
-                        <p class="titre">{{$t->titre}}</p>
-                        <p class="pitch">{{$t->pitch}}</p>
-                        <p class="photo">{{$t->photo}}</p>
-                    @endforeach
+                    <div class= "choix-histoires">
+                        @foreach($terminees as $t)
+                            <div class= "histoires-total blue">
+                                <p class="titre">{{$t->titre}}</p>
+                                <p class="pitch">{{$t->pitch}}</p>
+                                <img src="{{$t->photo}}" class="photo">
+                            </div>
+                        @endforeach
+                    </div>
                     @foreach($avis as $avi)
                         @foreach($oeuvres as $oeuvre)
                             @if($oeuvre->id == $avi->histoire_id)
-                                <p>Avis sur l'œuvre {{$oeuvre->titre}}:</p>
-                                <p>{{$avi->contenu}}</p>
+                                <div class="avis-profile">
+                                    <p class= "avis-titre">Avis sur l'œuvre {{$oeuvre->titre}}:</p>
+                                    <p>{{$avi->contenu}}</p>
+                                </div>
                             @endif
                         @endforeach
                     @endforeach

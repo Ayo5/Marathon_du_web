@@ -14,9 +14,7 @@ class ChapitreController extends Controller
         $chapitre = Chapitre::where('histoire_id', $histoireId)->orderBy('id', 'asc')->first();
         return view('chapitre.show', ['chapitre' => $chapitre]);
     }
-
-    public function show(int $histoireId, int $id)
-    {
+    public function show(int $histoireId, int $id) {
         $chapitre = Chapitre::find($id);
 
         return view('chapitre.show', [
@@ -24,8 +22,7 @@ class ChapitreController extends Controller
         ]);
     }
 
-    public function create($histoireId)
-    {
+    public function create($histoireId) {
         $histoire = Histoire::findOrFail($histoireId);
 
         return view('chapitre.create', [
@@ -33,12 +30,12 @@ class ChapitreController extends Controller
         ]);
     }
 
-    public function store(Request $request, $histoireId)
-    {
+    public function store(Request $request, $histoireId) {
         $request->validate([
             'titre' => 'required|string|max:255',
             'titrecourt' => 'required|string',
             'texte' => 'required|string',
+            'question' => 'required|string',
         ]);
 
         $chapitre = new Chapitre([
@@ -47,12 +44,23 @@ class ChapitreController extends Controller
             'texte' => $request->input('texte'),
             'histoire_id' => $histoireId,
             'premier' => $request->input('premier', false),
+            'question' => $request->input('question'),
         ]);
 
         $chapitre->save();
 
-        return redirect()->route('chapitre.show', [$histoireId, $chapitre->id]);
+        return redirect()->route('histoires.encours', ['id' => $histoireId]);
     }
+
+    public function encours($id)
+    {
+        $histoire = Histoire::findOrFail($id);
+        $chapitres = $histoire->chapitres;
+        $avis = $histoire->avis; // Assure-toi que ta relation est correctement définie dans le modèle Histoire
+
+        return view('encours', compact('histoire', 'chapitres', 'avis'));
+    }
+
 
 
     public function showSuiteForm($chapitreId)
