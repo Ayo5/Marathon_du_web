@@ -42,9 +42,8 @@ Route::get('/user/{idCurr}', [UserController::class, 'index'])->name('user.index
 
 Route::get('/histoire/{histoire}/chapitre/premier', [ChapitreController::class, 'premier'])->name('chapitre.premier');
 Route::get('/histoire/{histoire}/chapitre/{id}', [ChapitreController::class, 'show'])->name('chapitre.show');
-Route::get('/histoire/{histoire}/create', [ChapitreController::class, 'create'])->name('chapitre.create');
+Route::get('/histoire/{histoireId}/create', [ChapitreController::class, 'create'])->name('chapitre.create');
 Route::post('/histoire/{histoire}/chapitre', [ChapitreController::class, 'store'])->name('chapitre.store');
-
 
 Route::get('/histoire/{id}/comment/create', [AvisController::class, 'create'])->name('avis.create');
 Route::post('/avis/store', [AvisController::class, 'store'])->name('avis.store');
@@ -56,3 +55,4 @@ Route::put('/avis/{id}', [AvisController::class, 'update'])->name('avis.update')
 Route::get('/histoires/create', [HistoireController::class, 'create'])->name('histoires.create');
 Route::post('/histoires/store', [HistoireController::class, 'store'])->name('histoires.store');
 Route::get('/histoires/encours/{id}', [HistoireController::class, 'encours'])->name('histoires.encours');
+
