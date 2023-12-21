@@ -23,7 +23,7 @@
         </div>
         <div>
             {{-- la photo de l'histoire --}}
-            <p><strong>Photo : </strong>{{ $histoire->photo }}</p>
+            <p><strong>Photo : </strong><img src="{{ asset($histoire->photo) }}" alt="Image de l'histoire"> </p>
         </div>
         <div>
             {{-- Avis de l'histoire --}}
