@@ -1,6 +1,4 @@
-@extends('templates.app')
-
-@section('content')
+<x-layout>
     <div class="container">
         <h2>Créer une nouvelle histoire</h2>
 
@@ -31,7 +29,7 @@
                 <label for="pitch">Pitch de l'histoire</label>
                 <textarea cols="30" rows="10" name="pitch" class="form-control" required></textarea>
             </div>
-{{old('pitch')}}
+                {{old('pitch')}}
             <div class="form-group">
                 <label for="genre_id">Genre de l'histoire</label>
                 <select name="genre_id" class="form-control" required>
@@ -49,4 +47,4 @@
             <button type="submit" class="btn btn-primary">Créer l'histoire</button>
         </form>
     </div>
-@endsection
+</x-layout>
