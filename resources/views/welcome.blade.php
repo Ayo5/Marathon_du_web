@@ -7,6 +7,17 @@
             </div>
         </div>
 
+        <div class="welcome-login">
+            @auth
+                <h3>Bienvenue, {{Auth::user()->name}}</h3>
+                <div class="logo-login">
+                    <img src="/images/logo_reddrasil.png">
+                    <h2 style="color: #66BB8D;">Read</h2><h2 style="color: #65B9BD;">drasil</h2>
+                </div>
+                <a href="{{route('histoires.create')}}" class="header-story">Nouvelle Histoire</a>
+            @endauth
+        </div>
+
         <form class="form" action="{{ route('index') }}" method="get" style="text-align: center; margin-bottom: 20px;">
             <label for="cat">Sélectionner un genre :</label>
             <select name="cat" id="cat" onchange="this.form.submit()">
@@ -17,24 +28,18 @@
             </select>
         </form>
 
-        <table style="margin: auto; width: 50%;">
-            <thead>
-            <tr>
-                <th>Titre</th>
-                <th>Description</th>
-                <th>Date</th>
-            </tr>
-            </thead>
-            <tbody>
+        <div class="choix-histoires">
             @foreach($histoires as $histoire)
-                <tr style="text-align: center;">
-                    <td><b>{{$histoire->titre}}</b></td>
-                    <td><b>{{$histoire->pitch}}</b></td>
-                    <td><img src="{{ asset($histoire->photo) }}" alt="Image de l'histoire"></td>
-                    <td><a href="{{ route('histoires.show', ['id' => $histoire->id]) }}">Voir</a></td>
-                </tr>
+                @if ($histoire->id %2 == 0)
+                    <div class="histoires-total green">
+                @else
+                    <div class="histoires-total blue">
+                @endif
+                    <b>{{$histoire->titre}}</b>
+                    <b id="pitch">{{$histoire->pitch}}</b>
+                    <img src="{{ asset($histoire->photo) }}" alt="Image de l'histoire">
+                    <a href="{{ route('histoires.show', ['id' => $histoire->id]) }}" class="histoires-link">Voir plus</a>
+                </div>
             @endforeach
-            </tbody>
-        </table>
-
+        </div>
     @endsection
