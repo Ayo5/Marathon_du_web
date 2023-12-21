@@ -1,23 +1,33 @@
 <x-layout>
-    <form action="{{ route('chapitre.store', ['histoire' => $histoire->id]) }}" method="POST">
+
+    @if ($errors->any())
+        <div class="alert alert-danger">
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
+
+    <form action="{{ route('chapitre.store', $histoire->id) }}" method="post">
         @csrf
-        <div>
-            <label for="titre">Titre</label>
-            <input type="text" id="titre" name="titre" required>
-        </div>
-        <div>
-            <label for="titrecourt">Titre Court</label>
-            <input type="text" id="titrecourt" name="titrecourt" required>
-        </div>
-        <div>
-            <label for="media">Media</label>
-            <input type="file" id="media" name="media" required>
-        </div>
-        <div>
-            <input type="hidden" name="histoire_id" value="{{ $histoire->id }}">
-        </div>
-        <div>
-            <button type="submit">Create Chapitre</button>
-        </div>
+
+        <label for="histoire_id">ID de l'Histoire</label>
+        <input type="text" name="histoire_id" value="{{ $histoire->id }}" readonly>
+
+        <label for="titre">Titre du Chapitre</label>
+        <input type="text" name="titre" required>
+
+        <label for="titrecourt">Titre Court</label>
+        <input type="text" name="titrecourt" required>
+
+        <label for="texte">Contenu du Chapitre</label>
+        <input type="text" name="texte" rows="5" required>
+
+        <label for="premier">Premier</label>
+        <input type="checkbox" name="premier" value="1">
+
+        <button type="submit">Créer le chapitre</button>
     </form>
 </x-layout>

@@ -14,7 +14,9 @@ class ChapitreController extends Controller
         $chapitre = Chapitre::where('histoire_id', $histoireId)->orderBy('id', 'asc')->first();
         return view('chapitre.show', ['chapitre' => $chapitre]);
     }
-    public function show(int $histoireId, int $id) {
+
+    public function show(int $histoireId, int $id)
+    {
         $chapitre = Chapitre::find($id);
 
         return view('chapitre.show', [
@@ -22,48 +24,36 @@ class ChapitreController extends Controller
         ]);
     }
 
-//    public function store(Request $request, $histoireId)
-//    {
-//        $histoire = Histoire::find($histoireId);
-//
-//        $chapitre = new Chapitre;
-//        $chapitre->titre = $request->titre;
-//        $chapitre->titrecourt = $request->titrecourt;
-//        $chapitre->texte = $request->texte;
-//        $chapitre->media = $request->media;
-//        $chapitre->question = $request->question;
-//        $chapitre->premier = $request->premier;
-//        $chapitre->histoire()->associate($histoire);
-//        $chapitre->save();
-//
-//        return redirect()->route('chapitre.show', ['id' => $chapitre->id]);
-//    }
+    public function create($histoireId)
+    {
+        $histoire = Histoire::findOrFail($histoireId);
 
-    public function store(Request $request)
+        return view('chapitre.create', [
+            'histoire' => $histoire,
+        ]);
+    }
+
+    public function store(Request $request, $histoireId)
     {
         $request->validate([
-            'titre' => 'required|max:255',
-            'texte' => 'required',
-            'histoire_id' => 'required|exists:histoires,id',
-            'titrecourt' => 'required|max:255', // Ajoutez les règles de validation appropriées
-            'media' => 'nullable|string', // Vous devrez peut-être ajuster selon vos besoins
-            'question' => 'nullable|string', // Vous devrez peut-être ajuster selon vos besoins
-            'premier' => 'required|boolean',
+            'titre' => 'required|string|max:255',
+            'titrecourt' => 'required|string',
+            'texte' => 'required|string',
         ]);
 
-        Chapitre::create([
+        $chapitre = new Chapitre([
             'titre' => $request->input('titre'),
-            'texte' => $request->input('texte'),
-            'histoire_id' => $request->input('histoire_id'),
             'titrecourt' => $request->input('titrecourt'),
-            'media' => $request->input('media'),
-            'question' => $request->input('question'),
-            'premier' => $request->input('premier'),
+            'texte' => $request->input('texte'),
+            'histoire_id' => $histoireId,
+            'premier' => $request->input('premier', false),
         ]);
 
-        return redirect()->route('home.show', ['id' => $request->input('histoire_id')])
-            ->with('success', 'Chapitre ajouté avec succès');
+        $chapitre->save();
+
+        return redirect()->route('chapitre.show', [$histoireId, $chapitre->id]);
     }
+
 
     public function showSuiteForm($chapitreId)
     {
@@ -88,7 +78,7 @@ class ChapitreController extends Controller
         ]);
         $histoire = Chapitre::find($request->input('chapitre_source_id'))->histoire;
 
-        return redirect()->route('chapitre.show', ['histoire'=> $histoire ,'id' => $request->input('chapitre_source_id')])
+        return redirect()->route('chapitre.show', ['histoire' => $histoire, 'id' => $request->input('chapitre_source_id')])
             ->with('success', 'Chapitres liés avec succès');
     }
 }
