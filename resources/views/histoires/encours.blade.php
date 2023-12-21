@@ -78,4 +78,9 @@
             <button type="submit" class="btn btn-primary">Ajouter un nouveau chapitre</button>
         </form>
 
+        <!-- Formulaire pour créer une liasons -->
+        <form action="{{ route('chapitre.showSuiteForm', ['chapitreId' => $chapitre->id] ) }}" method="GET">
+            <button type="submit" class="btn btn-primary">Créer une liason</button>
+        </form>
+
 @endsection

@@ -7,7 +7,7 @@
         <label for="chapitre_destination_id">Chapitre cible :</label>
         <select name="chapitre_destination_id" required style="padding: 8px; width: 100%;">
             @foreach ($chapitresDisponibles as $chapitre)
-                <option value="{{ $chapitre->id }}">{{ $chapitre->titre }}</option>
+                <option value="{{ $chapitre->id }}">{{ $chapitre->titrecourt }}</option>
             @endforeach
         </select>
 
